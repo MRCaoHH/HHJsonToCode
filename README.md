@@ -4,6 +4,7 @@ HHJsonToCode是一个将json文本转换成oc代码并生成文件的工具。
 注意事项:请点击HHJsonToCode.xcodeproj打开工程，工程中有两个target，分别是：HHJsonToCode、HHJsonToCodePlugin.
 
 HHJsonToCode 是以app形式运行。
+
 HHJsonToCodePlugin 则是为xcode安装插件，打开方式菜单栏:Window->HHJsonToCode
 
 版本v1.0
