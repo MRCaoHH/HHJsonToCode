@@ -44,3 +44,67 @@ json:
 
 运行效果:
 
+
+![](https://github.com/MRCaoHH/HHJsonToCode/blob/master/run1.png)
+
+
+代码如下:
+
+```
+#import <Foundation/Foundation.h>
+
+@interface spouse : NSObject
+
+@property (nonatomic, strong) NSString *name; 
+@property (nonatomic, assign) NSInteger age; 
+@property (nonatomic, assign) NSInteger sex; 
+
+@end
+---------------------------------------------
+
+#import "spouse.h"
+
+@implementation spouse
+
+@end
+---------------------------------------------
+
+#import <Foundation/Foundation.h>
+
+@interface son : NSObject
+
+@property (nonatomic, strong) NSString *name; 
+@property (nonatomic, assign) NSInteger age; 
+
+@end
+---------------------------------------------
+
+#import "son.h"
+
+@implementation son
+
+@end
+---------------------------------------------
+
+#import <Foundation/Foundation.h>
+
+@interface Data : NSObject
+
+@property (nonatomic, assign) NSInteger age; 
+@property (nonatomic, assign) NSInteger sex; 
+@property (nonatomic, strong) spouse *spouse; 
+@property (nonatomic, strong) NSString *name; 
+@property (nonatomic, strong) NSArray *son; 
+@property (nonatomic, strong) NSArray *niceName; 
+
+@end
+---------------------------------------------
+
+#import "Data.h"
+
+@implementation Data
+
+@end
+```
+
+点击create file 会弹出视图选择储存文件的地点。
