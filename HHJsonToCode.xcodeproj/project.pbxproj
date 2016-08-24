@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		813F58D31D6D4C69000B3572 /* HHJsonToCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813F58D11D6D4C69000B3572 /* HHJsonToCodeController.m */; };
+		813F58D41D6D4C69000B3572 /* HHJsonToCodeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813F58D21D6D4C69000B3572 /* HHJsonToCodeController.xib */; };
+		818D93D81D6C3FE800AEFF63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 818D93D71D6C3FE800AEFF63 /* AppDelegate.m */; };
+		818D93DB1D6C3FE800AEFF63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 818D93DA1D6C3FE800AEFF63 /* main.m */; };
+		818D93DD1D6C3FE800AEFF63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818D93DC1D6C3FE800AEFF63 /* Assets.xcassets */; };
+		818D93E91D6C561D00AEFF63 /* HHJsonToCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */; };
+		81B98B4F1D6D4E17007FCAD6 /* HHJsonToCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813F58D11D6D4C69000B3572 /* HHJsonToCodeController.m */; };
+		81B98B501D6D4E20007FCAD6 /* HHJsonToCodeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813F58D21D6D4C69000B3572 /* HHJsonToCodeController.xib */; };
+		81B98B531D6D4E9D007FCAD6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B98B511D6D4E9D007FCAD6 /* MainMenu.xib */; };
+		81B98B541D6D96B9007FCAD6 /* HHJsonToCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */; };
+		81C827641D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 81C827631D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme */; };
+		81C827671D6D43F00049C2DE /* HHJsonToCodePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C827661D6D43F00049C2DE /* HHJsonToCodePlugin.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		813F58D01D6D4C69000B3572 /* HHJsonToCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHJsonToCodeController.h; sourceTree = "<group>"; };
+		813F58D11D6D4C69000B3572 /* HHJsonToCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHJsonToCodeController.m; sourceTree = "<group>"; };
+		813F58D21D6D4C69000B3572 /* HHJsonToCodeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHJsonToCodeController.xib; sourceTree = "<group>"; };
+		818D93D31D6C3FE800AEFF63 /* HHJsonToCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHJsonToCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		818D93D61D6C3FE800AEFF63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		818D93D71D6C3FE800AEFF63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		818D93DA1D6C3FE800AEFF63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		818D93DC1D6C3FE800AEFF63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		818D93E11D6C3FE800AEFF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		818D93E71D6C561D00AEFF63 /* HHJsonToCodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHJsonToCodeTool.h; sourceTree = "<group>"; };
+		818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHJsonToCodeTool.m; sourceTree = "<group>"; };
+		81B98B521D6D4E9D007FCAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		81C827601D6D43F00049C2DE /* HHJsonToCodePlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHJsonToCodePlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		81C827631D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = HHJsonToCodePlugin.xcscheme; path = HHJsonToCodePlugin.xcodeproj/xcshareddata/xcschemes/HHJsonToCodePlugin.xcscheme; sourceTree = SOURCE_ROOT; };
+		81C827651D6D43F00049C2DE /* HHJsonToCodePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHJsonToCodePlugin.h; sourceTree = "<group>"; };
+		81C827661D6D43F00049C2DE /* HHJsonToCodePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHJsonToCodePlugin.m; sourceTree = "<group>"; };
+		81C827681D6D43F00049C2DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		818D93D01D6C3FE800AEFF63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		818D93CA1D6C3FE800AEFF63 = {
+			isa = PBXGroup;
+			children = (
+				818D93D51D6C3FE800AEFF63 /* HHJsonToCode */,
+				81C827611D6D43F00049C2DE /* HHJsonToCodePlugin */,
+				818D93D41D6C3FE800AEFF63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		818D93D41D6C3FE800AEFF63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				818D93D31D6C3FE800AEFF63 /* HHJsonToCode.app */,
+				81C827601D6D43F00049C2DE /* HHJsonToCodePlugin.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		818D93D51D6C3FE800AEFF63 /* HHJsonToCode */ = {
+			isa = PBXGroup;
+			children = (
+				818D93D61D6C3FE800AEFF63 /* AppDelegate.h */,
+				818D93D71D6C3FE800AEFF63 /* AppDelegate.m */,
+				818D93E71D6C561D00AEFF63 /* HHJsonToCodeTool.h */,
+				818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */,
+				81B98B511D6D4E9D007FCAD6 /* MainMenu.xib */,
+				818D93DC1D6C3FE800AEFF63 /* Assets.xcassets */,
+				818D93E11D6C3FE800AEFF63 /* Info.plist */,
+				818D93D91D6C3FE800AEFF63 /* Supporting Files */,
+			);
+			path = HHJsonToCode;
+			sourceTree = "<group>";
+		};
+		818D93D91D6C3FE800AEFF63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				818D93DA1D6C3FE800AEFF63 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81C827611D6D43F00049C2DE /* HHJsonToCodePlugin */ = {
+			isa = PBXGroup;
+			children = (
+				81C827651D6D43F00049C2DE /* HHJsonToCodePlugin.h */,
+				81C827661D6D43F00049C2DE /* HHJsonToCodePlugin.m */,
+				813F58D01D6D4C69000B3572 /* HHJsonToCodeController.h */,
+				813F58D11D6D4C69000B3572 /* HHJsonToCodeController.m */,
+				813F58D21D6D4C69000B3572 /* HHJsonToCodeController.xib */,
+				81C827681D6D43F00049C2DE /* Info.plist */,
+				81C827621D6D43F00049C2DE /* Supporting Files */,
+			);
+			path = HHJsonToCodePlugin;
+			sourceTree = "<group>";
+		};
+		81C827621D6D43F00049C2DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				81C827631D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		818D93D21D6C3FE800AEFF63 /* HHJsonToCode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 818D93E41D6C3FE800AEFF63 /* Build configuration list for PBXNativeTarget "HHJsonToCode" */;
+			buildPhases = (
+				818D93CF1D6C3FE800AEFF63 /* Sources */,
+				818D93D01D6C3FE800AEFF63 /* Frameworks */,
+				818D93D11D6C3FE800AEFF63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHJsonToCode;
+			productName = HHJsonToCode;
+			productReference = 818D93D31D6C3FE800AEFF63 /* HHJsonToCode.app */;
+			productType = "com.apple.product-type.application";
+		};
+		81C8275F1D6D43F00049C2DE /* HHJsonToCodePlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81C827691D6D43F00049C2DE /* Build configuration list for PBXNativeTarget "HHJsonToCodePlugin" */;
+			buildPhases = (
+				81C8275D1D6D43F00049C2DE /* Sources */,
+				81C8275E1D6D43F00049C2DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHJsonToCodePlugin;
+			productName = HHJsonToCodePlugin;
+			productReference = 81C827601D6D43F00049C2DE /* HHJsonToCodePlugin.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		818D93CB1D6C3FE800AEFF63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = caohuihi;
+				TargetAttributes = {
+					818D93D21D6C3FE800AEFF63 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					81C8275F1D6D43F00049C2DE = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 818D93CE1D6C3FE800AEFF63 /* Build configuration list for PBXProject "HHJsonToCode" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 818D93CA1D6C3FE800AEFF63;
+			productRefGroup = 818D93D41D6C3FE800AEFF63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				818D93D21D6C3FE800AEFF63 /* HHJsonToCode */,
+				81C8275F1D6D43F00049C2DE /* HHJsonToCodePlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		818D93D11D6C3FE800AEFF63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				818D93DD1D6C3FE800AEFF63 /* Assets.xcassets in Resources */,
+				81B98B501D6D4E20007FCAD6 /* HHJsonToCodeController.xib in Resources */,
+				81B98B531D6D4E9D007FCAD6 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81C8275E1D6D43F00049C2DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81C827641D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme in Resources */,
+				813F58D41D6D4C69000B3572 /* HHJsonToCodeController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		818D93CF1D6C3FE800AEFF63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				818D93DB1D6C3FE800AEFF63 /* main.m in Sources */,
+				818D93D81D6C3FE800AEFF63 /* AppDelegate.m in Sources */,
+				818D93E91D6C561D00AEFF63 /* HHJsonToCodeTool.m in Sources */,
+				81B98B4F1D6D4E17007FCAD6 /* HHJsonToCodeController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81C8275D1D6D43F00049C2DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81C827671D6D43F00049C2DE /* HHJsonToCodePlugin.m in Sources */,
+				813F58D31D6D4C69000B3572 /* HHJsonToCodeController.m in Sources */,
+				81B98B541D6D96B9007FCAD6 /* HHJsonToCodeTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		81B98B511D6D4E9D007FCAD6 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81B98B521D6D4E9D007FCAD6 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		818D93E21D6C3FE800AEFF63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		818D93E31D6C3FE800AEFF63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		818D93E51D6C3FE800AEFF63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HHJsonToCode/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caohuihui.HHJsonToCode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		818D93E61D6C3FE800AEFF63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HHJsonToCode/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caohuihui.HHJsonToCode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		81C8276A1D6D43F00049C2DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = HHJsonToCodePlugin/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caohuihui.HHJsonToCodePlugin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		81C8276B1D6D43F00049C2DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = HHJsonToCodePlugin/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caohuihui.HHJsonToCodePlugin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		818D93CE1D6C3FE800AEFF63 /* Build configuration list for PBXProject "HHJsonToCode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				818D93E21D6C3FE800AEFF63 /* Debug */,
+				818D93E31D6C3FE800AEFF63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		818D93E41D6C3FE800AEFF63 /* Build configuration list for PBXNativeTarget "HHJsonToCode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				818D93E51D6C3FE800AEFF63 /* Debug */,
+				818D93E61D6C3FE800AEFF63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81C827691D6D43F00049C2DE /* Build configuration list for PBXNativeTarget "HHJsonToCodePlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81C8276A1D6D43F00049C2DE /* Debug */,
+				81C8276B1D6D43F00049C2DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 818D93CB1D6C3FE800AEFF63 /* Project object */;
+}
