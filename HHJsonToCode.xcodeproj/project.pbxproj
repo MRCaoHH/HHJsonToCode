@@ -31,8 +31,8 @@
 		818D93DA1D6C3FE800AEFF63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		818D93DC1D6C3FE800AEFF63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		818D93E11D6C3FE800AEFF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		818D93E71D6C561D00AEFF63 /* HHJsonToCodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHJsonToCodeTool.h; sourceTree = "<group>"; };
-		818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHJsonToCodeTool.m; sourceTree = "<group>"; };
+		818D93E71D6C561D00AEFF63 /* HHJsonToCodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHJsonToCodeTool.h; path = ../HHJsonToCode/HHJsonToCodeTool.h; sourceTree = "<group>"; };
+		818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHJsonToCodeTool.m; path = ../HHJsonToCode/HHJsonToCodeTool.m; sourceTree = "<group>"; };
 		81B98B521D6D4E9D007FCAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		81C827601D6D43F00049C2DE /* HHJsonToCodePlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHJsonToCodePlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C827631D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = HHJsonToCodePlugin.xcscheme; path = HHJsonToCodePlugin.xcodeproj/xcshareddata/xcschemes/HHJsonToCodePlugin.xcscheme; sourceTree = SOURCE_ROOT; };
@@ -75,8 +75,6 @@
 			children = (
 				818D93D61D6C3FE800AEFF63 /* AppDelegate.h */,
 				818D93D71D6C3FE800AEFF63 /* AppDelegate.m */,
-				818D93E71D6C561D00AEFF63 /* HHJsonToCodeTool.h */,
-				818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */,
 				81B98B511D6D4E9D007FCAD6 /* MainMenu.xib */,
 				818D93DC1D6C3FE800AEFF63 /* Assets.xcassets */,
 				818D93E11D6C3FE800AEFF63 /* Info.plist */,
@@ -96,6 +94,8 @@
 		81C827611D6D43F00049C2DE /* HHJsonToCodePlugin */ = {
 			isa = PBXGroup;
 			children = (
+				818D93E71D6C561D00AEFF63 /* HHJsonToCodeTool.h */,
+				818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */,
 				81C827651D6D43F00049C2DE /* HHJsonToCodePlugin.h */,
 				81C827661D6D43F00049C2DE /* HHJsonToCodePlugin.m */,
 				813F58D01D6D4C69000B3572 /* HHJsonToCodeController.h */,

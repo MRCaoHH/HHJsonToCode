@@ -32,10 +32,18 @@
     if ([textView isEqual:self.jsonTextView]) {
         if ([HHJsonToCodeTool checkIsJsonText:self.jsonTextView.string]) {
             self.jsonTextView.layer.borderWidth = 0;
-            [self outputCode];
+            if ([self.jsonTextView.string length]) {
+                [self outputCode];
+            }else{
+                self.codeTextView.string = @"";
+            }
+            
         }else{
-            self.jsonTextView.layer.borderWidth = 1;
-            self.jsonTextView.layer.borderColor = [NSColor redColor].CGColor;
+            
+                self.jsonTextView.layer.borderWidth = 1;
+                self.jsonTextView.layer.borderColor = [NSColor redColor].CGColor;
+            
+            
         }
     }
 

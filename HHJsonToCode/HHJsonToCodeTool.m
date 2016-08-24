@@ -103,7 +103,10 @@
             [self getCodeWithDic:value className:key codeArr:arr];
         }else if ([value isKindOfClass:[NSArray class]]){
             [code appendString:[self arrayValue:key]];
-            [self getCodeWithDic:value className:key codeArr:arr];
+            id firObject = [value firstObject];
+            if ([firObject isKindOfClass:[NSDictionary class]]) {
+                [self getCodeWithDic:firObject className:key codeArr:arr];
+            }
         }
     }
     [code appendString:@"\n@end"];
@@ -136,7 +139,7 @@
 }
 
 + (NSString *)arrayValue:(NSString *)key {
-    return [NSString stringWithFormat:@"@property (nonatomic, strong) NSArray <%@ *>*%@; \n",key,key];
+    return [NSString stringWithFormat:@"@property (nonatomic, strong) NSArray *%@; \n",key];
 }
 
 + (NSString *)numberValue:(NSString *)key value:(id)value{
