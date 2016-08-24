@@ -17,6 +17,9 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    
+    
+    
     self.windController = [[HHJsonToCodeController alloc]initWithWindowNibName:@"HHJsonToCodeController"];
     [self.windController showWindow:self.windController];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeWindow) name:NSWindowWillCloseNotification object:nil];
