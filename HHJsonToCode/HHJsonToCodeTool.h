@@ -7,8 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+static NSString *kName = @"Name";
+static NSString *kType = @"Type";
+static NSString *kModification = @"Modification";
+static NSString *kNote = @"Note";
+static NSString *kPointer = @"Pointer";
 
-static NSString *kSeparatedString = @"\n---------------------------------------------\n";
+@class HHClassModel;
+@class HHTreeNode;
 
 typedef NS_ENUM(NSInteger,HHFileType) {
     HHFileType_H = 0,
@@ -22,10 +28,15 @@ typedef NS_ENUM(NSInteger,HHFileType) {
 @end
 
 @interface HHJsonToCodeTool : NSObject
-+ (NSArray <HHCodeMode *>*)getCodeArr:(NSString *)codes;
-+ (NSString *)getCodeDoc:(id)object className:(NSString *)className;
-+ (NSString *)getCodeDocM:(NSString *)className;
+
 + (NSString *)getUserName;
+
 + (BOOL)checkIsJsonText:(NSString *)jsonText;
 + (id)objectWithJsonText:(NSString *)jsonText;
++ (NSString *)modificationWithClassName:(NSString *)className;
++ (BOOL)pointerWithClassName:(NSString *)className;
++ (NSArray *)getClassList;
+
++ (NSArray *)getCode:(HHClassModel *)model;
++ (NSArray *)getClassModelArr:(HHTreeNode*)node;
 @end

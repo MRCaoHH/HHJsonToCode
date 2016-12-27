@@ -7,64 +7,21 @@
 //
 
 #import "HHJsonToCodeTool.h"
+#import "HHClassModel.h"
+#import "HHTreeNode.h"
+#import "HHPropertyModel.h"
+
+static NSString *kFileName = @"___FILENAME___";
+static NSString *kProjectName = @"___PROJECTNAME___";
+static NSString *kDevName = @"___FULLUSERNAME___";
+static NSString *kDate = @"___DATE___";
+static NSString *kCopyright = @"___COPYRIGHT___";
 
 @implementation HHCodeMode
 
 @end
 
 @implementation HHJsonToCodeTool
-
-+ (NSArray<HHCodeMode *> *)getCodeArr:(NSString *)codes{
-    NSArray <NSString *> *codeArr = [codes componentsSeparatedByString:kSeparatedString];
-    NSMutableArray *codeModels = @[].mutableCopy;
-    for (NSString *code in codeArr) {
-        HHCodeMode *codeModel = [[HHCodeMode alloc]init];
-        codeModel.className = [self getClassName:code];
-        codeModel.code = code;
-        codeModel.type = [self getFileType:code];
-        [codeModels addObject:codeModel];
-    }
-    return codeModels;
-}
-
-+ (HHFileType)getFileType:(NSString *)code{
-    if ([code length] == 0) {
-        return HHFileType_H;
-    }
-     NSRegularExpression * regularExpresion = [NSRegularExpression regularExpressionWithPattern:@"@implementation" options:NSRegularExpressionCaseInsensitive error:nil];
-    
-    if ([regularExpresion firstMatchInString:code options:NSMatchingReportProgress range:NSMakeRange(0, code.length)]) {
-        return HHFileType_M;
-    }
-    return HHFileType_H;
-}
-
-+ (NSString *)getClassName:(NSString *)code{
-    if ([code length] == 0) {
-        return [NSString stringWithFormat:@"%zd",random()];
-    }
-    NSRegularExpression * regularExpresion = [NSRegularExpression regularExpressionWithPattern:@"(?<=((@implementation|@interface)[\\s]))(.*?)(?=[\\W])" options:NSRegularExpressionCaseInsensitive error:nil];
-    NSTextCheckingResult *matchResult =  [regularExpresion matchesInString:code options:NSMatchingReportProgress range:NSMakeRange(0, code.length)].lastObject;
-    NSString *className = [code substringWithRange:matchResult.range];
-    if (![className length]) {
-        return [NSString stringWithFormat:@"%zd",random()];
-    }
-    return className;
-}
-
-+ (NSString *)getCodeDoc:(id)object className:(NSString *)className;{
-    NSDictionary *dic = object;
-    if ([object isKindOfClass:[NSArray class]]) {
-        dic = ((NSArray *)object).firstObject;
-    }
-    NSMutableArray *code = @[].mutableCopy;
-    [self getCodeWithDic:dic className:className codeArr:&code];
-    return [code componentsJoinedByString:kSeparatedString];
-}
-
-+ (NSString *)getCodeDocM:(NSString *)className{
-    return [NSString stringWithFormat:@"\n#import \"%@.h\"\n\n@implementation %@\n\n@end",className,className];
-}
 
 + (NSString *)getUserName{
     char *ch;
@@ -76,7 +33,7 @@
 
 + (BOOL)checkIsJsonText:(NSString *)jsonText{
     if (jsonText.length == 0) {
-        return YES;
+        return NO;
     }
     id object = [self objectWithJsonText:jsonText];
     return object != nil;
@@ -89,75 +46,151 @@
     return object;
 }
 
-+ (void)getCodeWithDic:(NSDictionary *)dic className:(NSString *)className codeArr:(NSMutableArray **)arr{
++ (NSString *)modificationWithClassName:(NSString *)className{
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"HHPropertyHash" ofType:@"plist"];
+    NSDictionary *dic = [[NSDictionary alloc]initWithContentsOfFile:path];
+    NSString *modifi = dic[className][kModification];
+    return modifi?:(dic[@"Othe"][kModification]?:@"(nonatomic, strong)");
+}
+
++ (BOOL)pointerWithClassName:(NSString *)className{
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"HHPropertyHash" ofType:@"plist"];
+    NSDictionary *dic = [[NSDictionary alloc]initWithContentsOfFile:path];
+    NSNumber *pointer = dic[className][kPointer];
+    return pointer?pointer.boolValue:[dic[@"Othe"][kPointer] integerValue];
+}
+
++ (NSArray *)getClassList{
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"HHPropertyHash" ofType:@"plist"];
+    NSDictionary *dic = [[NSDictionary alloc]initWithContentsOfFile:path];
+    return dic.allKeys;
+}
+
++ (NSArray *)getCode:(HHClassModel *)model{
+    return @[[self getCodeH:model],[self getCodeM:model]];
+}
+
+
++ (HHCodeMode *)getCodeH:(HHClassModel *)model{
     NSMutableString *code = @"".mutableCopy;
-    [code appendFormat:@"\n#import <Foundation/Foundation.h>\n\n@interface %@ : NSObject\n\n",className];
-    for (NSString *key in [dic allKeys]) {
-        id value = dic[key];
-        if ([value isKindOfClass:[NSString class]]) {
-            [code appendString:[self stringValue:key]];
-        }else if ([value isKindOfClass:[NSNumber class]]){
-            [code appendString:[self numberValue:key value:value]];
-        }else if ([value isKindOfClass:[NSDictionary class]]){
-            [code appendString:[self dictionaryValue:key ]];
-            [self getCodeWithDic:value className:key codeArr:arr];
-        }else if ([value isKindOfClass:[NSArray class]]){
-            [code appendString:[self arrayValue:key]];
-            id firObject = [value firstObject];
-            if ([firObject isKindOfClass:[NSDictionary class]]) {
-                [self getCodeWithDic:firObject className:key codeArr:arr];
-            }
+    
+    NSString *fileTemp = [self getFileTemp:[NSString stringWithFormat:@"%@.h",model.typeName]];
+    [code appendString:fileTemp];
+    
+    NSMutableArray *impotClass = @[].mutableCopy;
+    NSArray *defaultClass = [self getClassList];
+    for (HHPropertyModel *proModel in model.proArr) {
+        if (![defaultClass containsObject:proModel.typeName]) {
+            [impotClass addObject:proModel.typeName];
         }
     }
-    [code appendString:@"\n@end"];
     
+    [code appendFormat:@"\n#import <Foundation/Foundation.h>\n"];
     
-    if (![*arr containsObject:code]) {
-        [*arr addObject:code];
+    for (NSString *aclass in impotClass) {
+        [code appendFormat:@"\n@class %@;",aclass];
     }
     
-    NSString *codeM = [self getCodeDocM:className];
-    if (![*arr containsObject:codeM]) {
-        [*arr addObject:codeM];
-    }
-}
-
-+ (NSString *)stringValue:(NSString *)key{
-    return [NSString stringWithFormat:@"@property (nonatomic, strong) NSString *%@; \n",key];
-}
-
-+ (NSString *)intValue:(NSString *)key{
-    return [NSString stringWithFormat:@"@property (nonatomic, assign) NSInteger %@; \n",key];
-}
-
-+ (NSString *)doubleValue:(NSString *)key{
-    return [NSString stringWithFormat:@"@property (nonatomic, assign) double %@; \n",key];
-}
-
-+ (NSString *)dictionaryValue:(NSString *)key{
-    return [NSString stringWithFormat:@"@property (nonatomic, strong) %@ *%@; \n",key,key];
-}
-
-+ (NSString *)arrayValue:(NSString *)key {
-    return [NSString stringWithFormat:@"@property (nonatomic, strong) NSArray *%@; \n",key];
-}
-
-+ (NSString *)numberValue:(NSString *)key value:(id)value{
-    if ([value integerValue] == [value floatValue]) {
-        return [self intValue:key];
-    }else{
-        return [self doubleValue:key];
+    [code appendFormat:@"\n@interface %@ : NSObject\n",model.typeName];
+    
+    for (HHPropertyModel *proModel in model.proArr) {
+        [code appendFormat:@"\n/*%@*/\n@property (%@) %@ %@%@;\n",proModel.note,proModel.modification,proModel.typeName,proModel.pointer?@"*":@"",proModel.name];
     }
     
+    [code appendFormat:@"\n@end"];
+    HHCodeMode *codeModel = [[HHCodeMode alloc]init];
+    codeModel.type = HHFileType_H;
+    codeModel.className = model.typeName;
+    codeModel.code = code;
+    return codeModel;
 }
 
-+ (NSString *)getFileHeader:(NSString *)fileName projectName:(NSString *)projectName organizationName:(NSString *)organizationName{
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSInteger year = [calendar component:NSCalendarUnitYear fromDate:[NSDate date]];
-    NSInteger month = [calendar component:NSCalendarUnitMonth fromDate:[NSDate date]];
-    NSInteger day = [calendar component:NSCalendarUnitDay fromDate:[NSDate date]];
-    NSString *userName = [self getUserName];
-    return [NSString stringWithFormat:@"//\n//  %@\n//  %@\n//\n//  Created by %@ on %zd/%zd/%zd.\n//  Copyright © %zd年 %@. All rights reserved.\n//",fileName,projectName,userName,day,month,year,year,organizationName];
++ (HHCodeMode *)getCodeM:(HHClassModel *)model{
+    NSMutableString *code = @"".mutableCopy;
+    
+    NSString *fileTemp = [self getFileTemp:[NSString stringWithFormat:@"%@.m",model.typeName]];
+    [code appendString:fileTemp];
+    
+    NSMutableArray *impotClass = @[].mutableCopy;
+    NSArray *defaultClass = [self getClassList];
+    for (HHPropertyModel *proModel in model.proArr) {
+        if (![defaultClass containsObject:proModel.typeName]) {
+            [impotClass addObject:proModel.typeName];
+        }
+    }
+    
+    [code appendFormat:@"\n#import \"%@.h\"\n",model.typeName];
+    
+    for (NSString *aclass in impotClass) {
+        [code appendFormat:@"\n#import \"%@.h\" ",aclass];
+    }
+    
+    
+    [code appendFormat:@"\n@implementation %@\n",model.typeName];
+    
+    [code appendFormat:@"\n@end"];
+    HHCodeMode *codeModel = [[HHCodeMode alloc]init];
+    codeModel.type = HHFileType_M;
+    codeModel.className = model.typeName;
+    codeModel.code = code;
+    return codeModel;
 }
+
++ (NSString *)getFileTemp:(NSString *)fileName{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"FileTemp" ofType:@"txt"];
+    NSString *fileTemp = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"%@",fileTemp);
+    NSString *userName = [NSString stringWithCString:getlogin() encoding:NSUTF8StringEncoding];
+    NSString *projectName = [NSString stringWithCString:getprogname() encoding:NSUTF8StringEncoding];
+    NSDate *date =  [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"yy/MM/dd";
+    NSString *dateString  = [dateFormatter stringFromDate:date];
+    dateFormatter.dateFormat = @"yyyy";
+    NSString *copyrightString =  [NSString stringWithFormat:@"Copyright © %@年 %@. All rights reserved.",[dateFormatter stringFromDate:date],userName];
+    fileTemp =  [fileTemp stringByReplacingOccurrencesOfString:kDate withString:dateString];
+    fileTemp =  [fileTemp stringByReplacingOccurrencesOfString:kDevName withString:userName];
+    fileTemp =  [fileTemp stringByReplacingOccurrencesOfString:kFileName withString:fileName];
+    fileTemp =  [fileTemp stringByReplacingOccurrencesOfString:kCopyright withString:copyrightString];
+    fileTemp = [fileTemp stringByReplacingOccurrencesOfString:kProjectName withString:projectName];
+    return fileTemp;
+}
+
+
++ (NSArray *)getClassModelArr:(HHTreeNode*)node{
+    NSMutableArray *mutableArr = @[].mutableCopy;
+    [self resolveNode:node classArr:mutableArr];
+    
+    NSMutableArray *classArr = @[].mutableCopy;
+    NSMutableArray *defaultClass = [self getClassList].mutableCopy;
+    for (HHClassModel *classModel in mutableArr) {
+        if (![defaultClass containsObject:classModel.typeName]) {
+            [classArr addObject:classModel];
+            [defaultClass addObject:classModel.typeName];
+        }
+    }
+    return classArr;
+}
+
++ (void )resolveNode:(HHTreeNode*)node classArr:(NSMutableArray *)arr{
+    HHClassModel *classModel = [[HHClassModel alloc]init];
+    classModel.typeName = node.typeName;
+    NSArray *defaultClass = [self getClassList];
+    for (HHTreeNode *subNode in node.childNodes) {
+        if (![defaultClass containsObject:subNode.typeName]||[subNode.childNodes count]) {
+            [self resolveNode:subNode classArr:arr];
+        }
+        HHPropertyModel *propertyModel = [[HHPropertyModel alloc]init];
+        propertyModel.name = subNode.name;
+        propertyModel.note = [subNode.objectValue description];
+        propertyModel.typeName = subNode.typeName;
+        propertyModel.modification = subNode.modification;
+        propertyModel.pointer = subNode.pointer;
+        [classModel.proArr addObject:propertyModel];
+    }
+    
+    [arr addObject:classModel];
+}
+
 
 @end

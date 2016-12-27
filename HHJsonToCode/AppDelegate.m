@@ -8,30 +8,43 @@
 
 #import "AppDelegate.h"
 #import "HHJsonToCodeTool.h"
-#import "HHJsonToCodeController.h"
-@interface AppDelegate ()
-@property (nonatomic, strong) HHJsonToCodeController *windController;
+#import "HHInputJsonViewController.h"
+#import "HHStructViewController.h"
+#import <objc/runtime.h>
+#import <Quartz/Quartz.h>
+
+
+@interface AppDelegate ()<NSWindowDelegate>
+{
+    
+    __weak IBOutlet NSView *bodyView;
+    HHInputJsonViewController *_jsonVc;
+}
+
+@property (weak) IBOutlet NSWindow *window;
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    
-    
-    
-    self.windController = [[HHJsonToCodeController alloc]initWithWindowNibName:@"HHJsonToCodeController"];
-    [self.windController showWindow:self.windController];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeWindow) name:NSWindowWillCloseNotification object:nil];
+    _jsonVc = [[HHInputJsonViewController alloc]initWithNibName:@"HHInputJsonViewController" bundle:[NSBundle mainBundle]];
+    [self showJsonVc];
+    self.window.delegate = self;
 }
 
-- (void)closeWindow{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowWillCloseNotification object:nil];
+- (void)windowWillClose:(NSNotification *)notification{
     [[NSApplication sharedApplication]terminate:[NSApplication sharedApplication]];
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+- (void)showJsonVc{
+    self.window.contentViewController = _jsonVc;
+}
+
+- (void)showStructVc{
+    HHStructViewController *structVc = [[HHStructViewController alloc]initWithNibName:@"HHStructViewController" bundle:[NSBundle mainBundle]];
+    structVc.json = _jsonVc.textView.string;
+    self.window.contentViewController = structVc;
 }
 
 @end

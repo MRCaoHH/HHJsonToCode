@@ -1,0 +1,3057 @@
+int sub_600f8(int arg0, int arg1, int arg2, int arg3) {
+r2 = arg2;
+r7 = &arg_C;
+asm{ bfceq      r4, #0x0, #0x4 };
+asm{ vst1ne.64  {d8, d9}, [r4:128] };
+sp = 0x280 - sp - 0x10;
+arg_68 = arg1;
+r5 = arg0;
+r11 = 0x0;
+r6 = 0x0;
+r10 = arg3;
+r8 = *___stack_chk_guard;
+arg_27C = r8;
+*r2 = 0x0;
+r0 = *(r5 + 0x40);
+asm{  };
+if (r0 != 0x0) {
+r11 = *(r0 + 0x98);
+}
+if (CPU_FLAGS & E) {
+r6 = *(r0 + 0x9c);
+}
+r4 = 0x0;
+*r2 = r4;
+r0 = *(r5 + 0x474);
+arg_60 = r2;
+if (r0 == 0x0) goto loc_601e0;
+goto loc_60152;
+
+loc_601e0:
+r11 = 0x3;
+r5 = 0x0;
+r0 = 0x0;
+
+loc_6048e:
+free(r0);
+free(r5);
+free(r4);
+if (r11 != 0x0) goto loc_608c2;
+goto loc_604a6;
+
+loc_608c2:
+if (r11 == 0x0) {
+r11 = 0x0;
+}
+else {
+if (r11 == 0x59) {
+r11 = 0x59;
+*arg_68 = 0x0;
+}
+else {
+r5 = arg_68;
+r0 = *r5;
+if (r0 != 0x0) {
+r4 = 0x0;
+sub_5c558(r0, 0x0);
+*r5 = r4;
+}
+}
+}
+
+loc_608f0:
+r0 = r8 - arg_27C;
+asm{  };
+if (r0 == 0x0) {
+r0 = r11;
+}
+if (CPU_FLAGS & NE) {
+r4 = &arg_280;
+}
+asm{ vld1eq.64  {d8, d9}, [r4:128] };
+if (CPU_FLAGS & NE) {
+r4 = r7 - 0x18;
+}
+asm{  };
+if (CPU_FLAGS & NE) {
+}
+if (CPU_FLAGS & NE) {
+Pop();
+Pop();
+Pop();
+}
+if (CPU_FLAGS & NE) {
+return r0;
+}
+r0 = __stack_chk_fail();
+return r0;
+
+loc_604a6:
+r4 = *arg_68;
+if ((*(*(r4 + 0x280) + 0xc) == 0x0) && (*(*(r4 + 0x284) + 0xc) == 0x0)) goto loc_604e4;
+goto loc_604ba;
+
+loc_604e4:
+if (*arg_60 != 0x0) goto loc_608c8;
+goto loc_604ee;
+
+loc_608c8:
+r11 = 0x0;
+goto loc_608f0;
+
+loc_604ee:
+r5 = *r4;
+gettimeofday(&arg_17C, 0x0);
+r0 = *(r5 + 0x518);
+r1 = arg_17C;
+r2 = *(r5 + 0x51c);
+r3 = arg_180;
+if (r1 == r0) {
+r3 - r2 << 0x10 | r3 - r2;
+asm{ vcvteq.f64.s32 d16, s0 };
+asm{ vdiveq.f64 d16, d16, d18 };
+}
+else {
+r2 = r3 - r2;
+r2 << 0x10 | r2;
+asm{ vcvteq.f64.s32 d16, s0 };
+asm{ vdiveq.f64 d16, d16, d18 };
+r1 - r0 << 0x10 | r1 - r0;
+asm{ vcvteq.f64.s32 d18, s0 };
+asm{ vaddne.f64 d16, d18, d16 };
+}
+*(r5 + 0x4e0) = d16;
+if ((*(int8_t *)(*(r4 + 0x23c) + 0x40) & 0x10) != 0x0) goto loc_60616;
+goto loc_60588;
+
+loc_60616:
+r11 = 0x0;
+*r10 = 0x1;
+goto loc_608c2;
+
+loc_60588:
+*r10 = 0x0;
+*(r4 + 0x21c) = 0x0;
+if (*(r5 + 0x3d8) == 0x0) goto loc_605c0;
+goto loc_60598;
+
+loc_605c0:
+*(r5 + 0x74) = 0x0;
+*(r5 + 0x86a8) = 0x0;
+*(r5 + 0x86a4) = 0x0;
+gettimeofday(&arg_7C, 0x0);
+asm{ strdne     r0, r1, [r4, #0x138] };
+if (*(r4 + 0x148) == 0xffffffff) goto loc_606b8;
+goto loc_605e8;
+
+loc_606b8:
+*(r4 + 0x1ec) = 0x0;
+r10 = *(r4 + 0x3c);
+r8 = *r4;
+gettimeofday(&arg_17C, 0x0);
+r6 = sub_6003c(r8, &arg_17C, 0x1);
+if (r6 < 0x0) goto loc_6083e;
+goto loc_606e2;
+
+loc_6083e:
+r11 = 0x1c;
+r8 = __stack_chk_guard;
+
+loc_6084c:
+r8 = *r8;
+r8 = *r8;
+goto loc_608c2;
+
+loc_606e2:
+r0 = *r10;
+r2 = 0x0;
+if (r0 != 0x0) {
+r3 = r0;
+do {
+r3 = *(r3 + 0x1c);
+r2 = r2 + 0x1;
+} while (r3 != 0x0);
+}
+*(r4 + 0x234) = r2;
+*(r4 + 0x44) = r0;
+*(r4 + 0x48) = 0x0;
+*(r4 + 0x150) = 0xffffffff;
+*(r4 + 0x154) = 0xffffffff;
+r0 = *r4;
+sub_5b9e0(r0, 0xc8);
+r1 = *(r4 + 0x44);
+r5 = r4 + 0x150;
+r10 = r8;
+r0 = *(r1 + 0x1c);
+asm{ itt        ne };
+if (r0 != 0x0) {
+r0 = r6 + r6;
+}
+if (CPU_FLAGS & E) {
+r6 = SAR(r0, 0x1);
+}
+*(r4 + 0x238) = r6;
+if (r1 == 0x0) goto loc_6086e;
+goto loc_60730;
+
+loc_6086e:
+r11 = 0x7;
+r8 = *___stack_chk_guard;
+
+loc_60894:
+if (*r5 == 0xffffffff) goto loc_60914;
+goto loc_6089c;
+
+loc_60914:
+asm{  };
+if (r11 == 0x0) {
+r11 = 0x7;
+}
+goto loc_608c2;
+
+loc_6089c:
+*(r10 + 0x8728) = *(r10 + 0x8728) + 0x1;
+
+loc_608aa:
+r4 = r4 + 0x138;
+r11 = 0x0;
+gettimeofday(&arg_74, 0x0);
+asm{ strdeq     r0, r1, [r4] };
+goto loc_608c2;
+
+loc_60730:
+r8 = *___stack_chk_guard;
+
+loc_60742:
+r11 = sub_6832c(r4, r1, r5);
+if (r11 == 0x0) goto loc_60890;
+goto loc_60754;
+
+loc_60890:
+r11 = 0x0;
+goto loc_60894;
+
+loc_60754:
+r1 = *(*(r4 + 0x44) + 0x1c);
+*(r4 + 0x44) = r1;
+if (r1 != 0x0) goto loc_60742;
+goto loc_60894;
+
+loc_605e8:
+r6 = r5 + 0x518;
+gettimeofday(&arg_17C, 0x0);
+r0 = *r6;
+r1 = arg_17C;
+r2 = *(r6 + 0x4);
+r3 = arg_180;
+if (r1 == r0) {
+r3 - r2 << 0x10 | r3 - r2;
+asm{ vcvtne.f64.s32 d16, s0 };
+asm{ vdiv.f64   d16, d16, d18 };
+}
+else {
+r3 - r2 << 0x10 | r3 - r2;
+asm{ vcvt.f64.s32 d16, s0 };
+asm{ vdiv.f64   d16, d16, d18 };
+r1 - r0 << 0x10 | r1 - r0;
+asm{ vcvt.f64.s32 d18, s0 };
+asm{ vadd.f64   d16, d18, d16 };
+}
+*(r5 + 0x4e8) = d16;
+gettimeofday(&arg_17C, 0x0);
+r0 = *r6;
+r1 = arg_17C;
+r2 = *(r6 + 0x4);
+r3 = arg_180;
+if (r1 == r0) {
+r3 - r2 << 0x10 | r3 - r2;
+asm{ vcvt.f64.s32 d16, s0 };
+asm{ vdiv.f64   d16, d16, d18 };
+}
+else {
+r3 - r2 << 0x10 | r3 - r2;
+asm{ vcvt.f64.s32 d16, s0 };
+asm{ vdiv.f64   d16, d16, d18 };
+r1 - r0 << 0x10 | r1 - r0;
+asm{ vcvt.f64.s32 d18, s0 };
+asm{ vadd.f64   d16, d18, d16 };
+}
+*(r5 + 0x4f0) = d16;
+*(r4 + 0x1ec) = 0x1;
+*r10 = 0x1;
+r1 = *(r4 + 0x148);
+r8 = *___stack_chk_guard;
+sub_679cc(r4, r1);
+goto loc_608aa;
+
+loc_60598:
+r0 = *(r4 + 0x254);
+free(r0);
+*(r4 + 0x254) = 0x0;
+r1 = *(r5 + 0x3d8);
+r0 = sub_5a7ac("User-Agent: %s\r\n", r1, r2, r3);
+*(r4 + 0x254) = r0;
+if (r0 == 0x0) goto loc_60800;
+goto loc_605c0;
+
+loc_60800:
+r11 = 0x1b;
+r8 = __stack_chk_guard;
+goto loc_6084c;
+
+loc_604ba:
+*r10 = 0x1;
+goto loc_608c8;
+
+loc_60152:
+arg_64 = r10;
+r10 = calloc(0x1, 0x46c);
+if (r10 == 0x0) goto loc_60480;
+goto loc_6016c;
+
+loc_60480:
+r11 = 0x1b;
+r4 = 0x0;
+r5 = 0x0;
+r0 = 0x0;
+r10 = arg_64;
+goto loc_6048e;
+
+loc_6016c:
+*(r10 + 0x23c) = 0x1917e4;
+*(r10 + 0x38) = 0xffffffff;
+*(r10 + 0xa4) = 0xffffffff;
+*(r10 + 0xa8) = 0xffffffff;
+*(r10 + 0x154) = 0xffffffff;
+*(r10 + 0x150) = 0xffffffff;
+*(r10 + 0x14c) = 0xffffffff;
+*(r10 + 0x148) = 0xffffffff;
+*(r10 + 0x1c8) = 0x1;
+r4 = 0x0;
+gettimeofday(&arg_17C, 0x0);
+asm{ strd       r0, r1, [r10, #0x140] };
+*r10 = r5;
+r0 = *(r5 + 0x294);
+*(r10 + 0x12c) = r0;
+r1 = *(r5 + 0x3b0);
+if (r1 != 0x0) {
+r1 = *(int8_t *)r1;
+arg_5C = r11;
+arg_58 = r6;
+asm{ it         ne };
+if (r1 != 0x0) {
+r1 = 0x1;
+}
+*(r10 + 0x1d0) = r1;
+asm{  };
+if (r0 >= 0x2) {
+r4 = 0x1;
+}
+r4 = r4 & r1;
+}
+else {
+r4 = 0x0;
+arg_5C = r11;
+arg_58 = r6;
+*(r10 + 0x1d0) = r4;
+}
+*(r10 + 0x1d4) = r4;
+r0 = *(r5 + 0x3f0);
+asm{  };
+if (r0 != 0x0) {
+r0 = 0x1;
+}
+*(r10 + 0x1dc) = r0;
+*(r10 + 0x1fc) = *(r5 + 0x2cc);
+r0 = *(r5 + 0x3e4);
+asm{  };
+if (r0 != 0x0) {
+r0 = 0x1;
+}
+*(r10 + 0x1d8) = r0;
+*(r10 + 0x208) = *(r5 + 0x320);
+*(r10 + 0x20c) = *(r5 + 0x324);
+*(r10 + 0x448) = *(r5 + 0x254);
+*(r10 + 0x44c) = *(r5 + 0x258);
+*(r10 + 0x244) = *(r5 + 0x2a8);
+r0 = *(r5 + 0x40);
+asm{  };
+if (r0 != 0x0) {
+r0 = *(int8_t *)(r0 + 0x60);
+}
+if (CPU_FLAGS & E) {
+TEST(r0 & 0x1);
+}
+if ((
+loc_60252:) && (*(r10 + 0x288) == 0x0)) goto loc_6025a;
+goto loc_6026e;
+
+loc_6025a:
+r0 = calloc(0x4000, 0x1);
+*(r10 + 0x288) = r0;
+if (r0 == 0x0) goto loc_6044e;
+goto loc_6026e;
+
+loc_6044e:
+r0 = *(r10 + 0x280);
+sub_5bb28(r0, 0x0);
+r0 = *(r10 + 0x284);
+sub_5bb28(r0, 0x0);
+asm{ vmovne.i32 d16, #0x0 } << 0x10 | 0x0;
+*(r10 + 0x280) = d16;
+r0 = *(r10 + 0x288);
+free(r0);
+r0 = *(r10 + 0x450);
+free(r0);
+free(r10);
+goto loc_60480;
+
+loc_6026e:
+r0 = malloc(0x10);
+r11 = 0x0;
+if (r0 != 0x0) {
+asm{ vmovne.i32 d16, #0x0 } << 0x10 | 0x0;
+*(r0 + 0x8) = 0x68735;
+*(r0 + 0xc) = 0x0;
+r11 = r0;
+*r0 = d16;
+}
+*(r10 + 0x280) = r11;
+r0 = malloc(0x10);
+if (r0 == 0x0) goto loc_60448;
+goto loc_602a4;
+
+loc_60448:
+*(r10 + 0x284) = 0x0;
+goto loc_6044e;
+
+loc_602a4:
+*r0 = 0x0;
+*(r0 + 0x4) = 0x0;
+*(r0 + 0x8) = 0x68735;
+*(r0 + 0xc) = 0x0;
+*(r10 + 0x284) = r0;
+asm{ it         ne };
+if (r0 != 0x0) {
+}
+if (
+loc_602c4:) goto loc_6044e;
+r0 = *(r5 + 0x388);
+if (r0 == 0x0) goto loc_602dc;
+goto loc_602ce;
+
+loc_602dc:
+*(r10 + 0x458) = *(r5 + 0x16c);
+*(int16_t *)(r10 + 0x454) = *(int16_t *)(r5 + 0x168);
+*(r10 + 0x2c) = *(r5 + 0x1a8);
+*(r10 + 0x30) = *(r5 + 0x1ac);
+*arg_68 = r10;
+r6 = strlen(*(r5 + 0x474));
+r0 = *(r5 + 0x86ac);
+free(r0);
+r4 = r6 + 0x2;
+*(r5 + 0x86b0) = 0x0;
+asm{  };
+if (r6 >= 0x100) {
+r4 = 0x102;
+}
+r6 = malloc(r4);
+*(r5 + 0x86ac) = r6;
+if (r6 == 0x0) goto loc_604c2;
+goto loc_60340;
+
+loc_604c2:
+r11 = 0x1b;
+r5 = 0x0;
+r0 = 0x0;
+r10 = arg_64;
+r4 = 0x0;
+r8 = *___stack_chk_guard;
+goto loc_6048e;
+
+loc_60340:
+r11 = 0x86b0 + r5;
+r8 = 0x86ac + r5;
+*r11 = r6;
+r0 = malloc(r4);
+r1 = r10 + 0x84;
+*r1 = r0;
+if (r0 == 0x0) goto loc_6051c;
+goto loc_6035a;
+
+loc_6051c:
+free(r6);
+r4 = 0x0;
+r5 = 0x0;
+*r8 = r4;
+r0 = 0x0;
+*r11 = r4;
+r11 = 0x1b;
+r10 = arg_64;
+r8 = *___stack_chk_guard;
+goto loc_6048e;
+
+loc_6035a:
+arg_50 = r5;
+r5 = r11;
+arg_3C = r1;
+arg_44 = r8;
+*(r10 + 0x8c) = r0;
+arg_4C = r10 + 0x8c;
+*(int8_t *)r0 = 0x0;
+r4 = sub_2f4b4(0x12e4e4);
+arg_54 = sub_2f4b4(0x12e4e4);
+r0 = sub_2f4b4(0x12e4e4);
+r11 = 0x1b;
+asm{  };
+r8 = *___stack_chk_guard;
+if ((r4 != 0x0) && (arg_54 != 0x0)) goto loc_603b8;
+goto loc_6054c;
+
+loc_603b8:
+asm{ vmovne.i32 q4, #0x0 } << 0x10 | 0x0;
+arg_40 = r0;
+r6 = r5;
+r5 = *r6;
+asm{ vst1.32    {d8, d9}, [r0] };
+arg_48 = r4;
+r4 = *(arg_50 + 0x474);
+if (CPU_FLAGS & E) {
+}
+if (strpbrk(r4, "\r\n") != 0x0) goto loc_6069e;
+goto loc_603e6;
+
+loc_6069e:
+r11 = 0x3;
+
+loc_606a2:
+r4 = arg_48;
+
+loc_606a4:
+r10 = arg_64;
+r0 = arg_40;
+
+loc_606aa:
+r5 = arg_54;
+goto loc_6048e;
+
+loc_603e6:
+r3 = r5;
+if ((sscanf(r4, "%15[^:]:%[^\n]") == 0x2) && (sub_65d94(&arg_17C, "file") != 0x0)) goto loc_60416;
+goto loc_60622;
+
+loc_60416:
+r8 = arg_4C;
+if (*(int8_t *)r5 == 0x2f) {
+if (*(int8_t *)(r5 + 0x1) == 0x2f) {
+r0 = strlen(r5 + 0x2);
+memmove(r5, r5 + 0x2, r0 + 0x1);
+if (*(int8_t *)r5 == 0x2f) {
+arg_38 = r5;
+arg_2C = r6;
+}
+else {
+arg_2C = r6;
+r0 = strchr(r5, 0x2f);
+if (r0 != 0x0) {
+r4 = r0 + 0x1;
+r1 = *(int8_t *)r4;
+asm{ it         ne };
+if (r1 != 0x2f) {
+r4 = r0;
+}
+r0 = strlen(r4);
+arg_38 = r5;
+memmove(r5, r4, r0 + 0x1);
+}
+else {
+arg_38 = r5;
+}
+}
+}
+else {
+arg_38 = r5;
+arg_2C = r6;
+}
+}
+else {
+arg_2C = r6;
+r0 = strchr(r5, 0x2f);
+if (r0 != 0x0) {
+r4 = r0 + 0x1;
+r1 = *(int8_t *)r4;
+asm{  };
+if (r1 != 0x2f) {
+r4 = r0;
+}
+r0 = strlen(r4);
+arg_38 = r5;
+memmove(r5, r4, r0 + 0x1);
+}
+else {
+arg_38 = r5;
+}
+}
+arg_34 = 0x0;
+r2 = "file";
+r11 = arg_50;
+
+loc_609d4:
+r4 = *r8;
+arg_30 = r2;
+arg_50 = r11;
+r0 = strchr(r4, 0x40);
+asm{  };
+if (r0 == 0x0) {
+r0 = r4;
+}
+if (CPU_FLAGS & E) {
+r0 = r0 + 0x1;
+}
+r5 = strchr(r0, 0x3f);
+if (r5 == 0x0) goto loc_60a34;
+goto loc_609f8;
+
+loc_60a34:
+r1 = arg_38;
+r5 = arg_50;
+r0 = *(int8_t *)r1;
+if (r0 == 0x0) goto loc_60a46;
+goto loc_60a3c;
+
+loc_60a46:
+r4 = r1;
+arg_4C = r8;
+*(int16_t *)r1 = 0x2f;
+
+loc_60a50:
+r0 = *(int8_t *)r4;
+r6 = 0x1;
+
+loc_60a54:
+if (r0 != 0x3f) goto loc_60a84;
+goto loc_60a58;
+
+loc_60a84:
+if (*(r5 + 0x468) != 0x0) goto loc_60c44;
+goto loc_60a8e;
+
+loc_60c44:
+COND = r6 == 0x0;
+r6 = arg_4C;
+r8 = *___stack_chk_guard;
+if (COND) goto loc_60cda;
+goto loc_60c5c;
+
+loc_60cda:
+arg_50 = r5;
+r11 = 0x0;
+r5 = *r6;
+arg_38 = r4;
+arg_7C = r11;
+arg_74 = r11;
+arg_70 = r11;
+r0 = strchr(r5, 0x40);
+if (r0 == 0x0) goto loc_60dae;
+goto loc_60cfc;
+
+loc_60dae:
+free(arg_7C);
+free(arg_74);
+free(arg_70);
+if (r11 != 0x0) goto loc_606a2;
+r0 = *r6;
+r4 = r8;
+arg_4C = r6;
+if (*(int8_t *)r0 == 0x5b) {
+r5 = strchr(r0, 0x25);
+if (r5 != 0x0) {
+r0 = strncmp("%25", r5, 0x3);
+r1 = 0x1;
+asm{  };
+if (r0 == 0x0) {
+r1 = 0x3;
+}
+r0 = strtoul(r5 + r1, &arg_6C, 0xa);
+r6 = arg_6C;
+r8 = r0;
+if (*(int8_t *)r6 == 0x5d) {
+r0 = strlen(r6);
+memmove(r5, r6, r0 + 0x1);
+*(r10 + 0x7c) = r8;
+}
+}
+}
+r5 = arg_50;
+r0 = *(r5 + 0x41c);
+asm{  };
+if (r0 != 0x0) {
+*(r10 + 0x7c) = r0;
+}
+r0 = strchr(arg_38, 0x23);
+r8 = r4;
+if (r0 != 0x0) {
+*(int8_t *)r0 = 0x0;
+r0 = *(r5 + 0x474);
+r0 = strchr(r0, 0x23);
+asm{  };
+if (r0 != 0x0) {
+*(int8_t *)r0 = 0x0;
+}
+}
+if (sub_65d94("HTTP", arg_30) == 0x0) goto loc_60e86;
+goto loc_60e62;
+
+loc_60e86:
+r11 = 0x1;
+goto loc_606a2;
+
+loc_60e62:
+r4 = arg_48;
+if (((*(int8_t *)(r5 + 0x420) & 0x1) != 0x0) && (((*(r5 + 0x85bc) == 0x0) || ((*(int8_t *)(r5 + 0x424) & 0x1) != 0x0)))) goto loc_60e8c;
+goto loc_60e80;
+
+loc_60e8c:
+*(r10 + 0x23c) = 0x191828;
+*(r10 + 0x240) = 0x191828;
+r0 = 0x191828;
+if (arg_34 == 0x0) goto loc_60ef2;
+goto loc_60ea6;
+
+loc_60ef2:
+if ((*(int8_t *)(r0 + 0x40) & 0x40) != 0x0) {
+r0 = *r10;
+r0 = *(r0 + 0x86b0);
+r1 = 0x3f;
+r0 = strchr(r0, r1);
+asm{  };
+if (r0 != 0x0) {
+r1 = 0x0;
+}
+if (CPU_FLAGS & E) {
+*(int8_t *)r0 = r1;
+}
+}
+r0 = *(r5 + 0x410);
+if (r0 == 0x0) goto loc_60f28;
+goto loc_60f1a;
+
+loc_60f28:
+COND = *(r10 + 0x1dc) == 0x0;
+r0 = arg_68;
+if (COND) goto loc_60f9e;
+goto loc_60f32;
+
+loc_60f9e:
+arg_68 = r0;
+r0 = *(arg_50 + 0x3b0);
+if (r0 == 0x0) goto loc_60fb8;
+goto loc_60faa;
+
+loc_60fb8:
+r5 = 0x0;
+
+loc_60fba:
+r1 = *(arg_50 + 0x3f8);
+if ((r1 != 0x0) && (sub_689b0(*arg_4C, r1) != 0x0)) goto loc_610fe;
+goto loc_60fd0;
+
+loc_610fe:
+free(r5);
+
+loc_61104:
+asm{ vmovne.i32 d16, #0x0 } << 0x10 | 0x0;
+r0 = 0x0;
+*(r10 + 0x1d0) = d16;
+*(r10 + 0x1dc) = r0;
+*(r10 + 0x1fc) = r0;
+
+loc_61116:
+if (r0 != 0x0) {
+r0 = *(r10 + 0x240);
+r0 = *(r0 + 0x40);
+r0 = r0 & 0x1;
+asm{  };
+if (r0 != 0x0) {
+r0 = 0x1;
+}
+if (CPU_FLAGS & E) {
+*(r10 + 0x1fc) = r0;
+}
+}
+r0 = *arg_4C;
+r0 = sscanf(r0, "[%*45[0123456789abcdefABCDEF:.]%c");
+asm{  };
+if (r0 == 0x1) {
+r0 = arg_74;
+}
+if (CPU_FLAGS & NE) {
+}
+if (
+loc_61148:) {
+*(r10 + 0x1e0) = 0x1;
+*(r10 + 0x8c) = 0x2;
+r0 = strchr(0x2, 0x5d);
+r5 = 0x0;
+if (r0 != 0x0) {
+r5 = 0x0;
+*(int8_t *)r0 = r5;
+r0 = r0 + 0x1;
+r1 = *(int8_t *)r0;
+asm{  };
+if (r1 == 0x3a) {
+r5 = r0;
+}
+}
+}
+else {
+r5 = strrchr(*arg_4C, 0x3a);
+}
+r0 = *(arg_50 + 0x13c);
+if ((r0 != 0x0) && (*(arg_50 + 0x85e4) != 0x0)) goto loc_61184;
+goto loc_611c0;
+
+loc_61184:
+asm{ uxtheq     r0, r0 };
+*(r10 + 0xa8) = r0;
+asm{  };
+if (r5 != 0x0) {
+r0 = 0x0;
+}
+if (CPU_FLAGS & E) {
+*(int8_t *)r5 = r0;
+}
+r0 = *(r10 + 0x1d4);
+r11 = 0x0;
+if (r0 == 0x0) goto loc_612ca;
+goto loc_611a0;
+
+loc_612ca:
+if (r11 != 0x0) goto loc_61a48;
+goto loc_612d2;
+
+loc_61a48:
+r10 = arg_64;
+r0 = arg_40;
+r8 = *___stack_chk_guard;
+
+loc_61a60:
+r4 = arg_48;
+goto loc_606aa;
+
+loc_612d2:
+if (*(arg_50 + 0x3e4) == 0x0) goto loc_612f0;
+goto loc_612da;
+
+loc_612f0:
+if (*(arg_50 + 0x3e8) == 0x0) goto loc_6130e;
+goto loc_612f8;
+
+loc_6130e:
+if (*(arg_50 + 0x3ec) == 0x0) goto loc_6132c;
+goto loc_61316;
+
+loc_6132c:
+*(r10 + 0x210) = 0x0;
+if (*0x30c == 0x0) goto loc_618b2;
+goto loc_6133e;
+
+loc_618b2:
+if (((*(int8_t *)(*(r10 + 0x23c) + 0x40) & 0x20) != 0x0) && (*(r10 + 0x1d8) == 0x0)) goto loc_618e0;
+goto loc_618c8;
+
+loc_618e0:
+r0 = sub_2f4b4("anonymous");
+*(r10 + 0x114) = r0;
+if (r0 == 0x0) goto loc_61a3e;
+goto loc_618f8;
+
+loc_61a3e:
+*(r10 + 0x118) = 0x0;
+
+loc_61a44:
+r11 = 0x1b;
+goto loc_61a48;
+
+loc_618f8:
+r4 = r10 + 0x114;
+r0 = "ftp@example.com";
+
+loc_61906:
+r0 = sub_2f4b4(r0);
+*(r10 + 0x118) = r0;
+r11 = 0x1b;
+asm{  };
+if (r0 != 0x0) {
+r0 = *r4;
+}
+if (CPU_FLAGS & E) {
+}
+if (
+loc_6191a:) goto loc_61a48;
+if (*(int8_t *)arg_40 == 0x0) goto loc_61934;
+goto loc_61924;
+
+loc_61934:
+r4 = *r10;
+r0 = *(r4 + 0x118);
+free(r0);
+*(r4 + 0x118) = 0x0;
+r0 = *(r4 + 0xfc);
+free(r0);
+*(r4 + 0xfc) = 0x0;
+memset(r4 + 0x4c, 0x0, 0xd0);
+*(r4 + 0x58) = 0xffffffff;
+*(r4 + 0x5c) = 0xffffffff;
+*(r10 + 0x80) = 0x1;
+r0 = *(r10 + 0x23c);
+if (*0x5 == 0x0) goto loc_61984;
+goto loc_61974;
+
+loc_61984:
+r1 = *(r10 + 0xa4);
+asm{  };
+if (r1 <= 0xffffffff) {
+r0 = *(r0 + 0x38);
+}
+if (CPU_FLAGS & G) {
+*(r10 + 0xa4) = r0;
+}
+r0 = *(r10 + 0xa8);
+asm{  };
+if (r0 <= 0xffffffff) {
+r0 = *(r10 + 0x240);
+}
+if (CPU_FLAGS & G) {
+r0 = *(int16_t *)(r0 + 0x38);
+}
+if (CPU_FLAGS & G) {
+*(r10 + 0xa8) = r0;
+}
+*(r10 + 0x160) = 0x68abd;
+*(r10 + 0x168) = 0x68071;
+r8 = arg_50;
+*(r10 + 0x164) = 0x68abd;
+*(r10 + 0x16c) = 0x68071;
+r0 = *(arg_50 + 0x3c0);
+*(arg_50 + 0x260) = r0;
+r1 = *(arg_50 + 0x3c4);
+*(arg_50 + 0x264) = r1;
+*(arg_50 + 0x268) = *(arg_50 + 0x3dc);
+*(arg_50 + 0x26c) = *(arg_50 + 0x3e0);
+*(arg_50 + 0x270) = *(arg_50 + 0x3d4);
+*(arg_50 + 0x274) = *(arg_50 + 0x3d0);
+*(arg_50 + 0x278) = *(arg_50 + 0x3cc);
+*(r10 + 0x1bc) = *(arg_50 + 0x288);
+*(r10 + 0x18c) = *(arg_50 + 0x258);
+*(r10 + 0x188) = *(arg_50 + 0x254);
+*(r10 + 0x180) = *(arg_50 + 0x24c);
+if (r1 == 0x0) goto loc_61a66;
+goto loc_61a2c;
+
+loc_61a66:
+*(r10 + 0x198) = 0x0;
+
+loc_61a6c:
+if (r0 == 0x0) goto loc_61a7c;
+goto loc_61a6e;
+
+loc_61a7c:
+*(r10 + 0x194) = 0x0;
+
+loc_61a82:
+r0 = *(r8 + 0x278);
+if (r0 == 0x0) goto loc_61a96;
+goto loc_61a88;
+
+loc_61a96:
+*(r10 + 0x1ac) = 0x0;
+
+loc_61a9c:
+r0 = *(r8 + 0x274);
+if (r0 == 0x0) goto loc_61ab0;
+goto loc_61aa2;
+
+loc_61ab0:
+*(r10 + 0x1a8) = 0x0;
+
+loc_61ab6:
+r0 = *(r8 + 0x270);
+if (r0 == 0x0) goto loc_61ad2;
+goto loc_61abc;
+
+loc_61ad2:
+*(r10 + 0x1a4) = 0x0;
+
+loc_61ad8:
+gettimeofday(&arg_7C, 0x0);
+r0 = *(r8 + 0x594);
+r6 = *(r0 + 0x24);
+r3 = *(r0 + 0x20);
+r2 = arg_80 - r6;
+r1 = arg_7C - r3;
+asm{ smmulle    r2, r2, r6 };
+r3 = 0x3e8;
+r2 = (SAR(r2, 0x6)) + r2;
+asm{ mlale      r1, r1, r3, r2 };
+if (r1 >= 0x3e8) {
+if (r0 != 0x0) {
+arg_17C = r0;
+arg_180 = 0x0;
+arg_184 = 0x0;
+r5 = sub_5b60c(&arg_17C);
+if (r5 != 0x0) {
+r11 = &arg_17C;
+do {
+r4 = *r5;
+r5 = sub_5b60c(r11);
+r4 = **(r4 + 0x8);
+while (r4 != 0x0) {
+r0 = *r4;
+r4 = *(r4 + 0x8);
+sub_68bb0(r0, r8);
+}
+} while (r5 != 0x0);
+}
+}
+r3 = arg_80;
+r2 = arg_7C;
+asm{ strdle     r2, r3, [r0, #0x20] };
+}
+if ((*(r8 + 0x31c) != 0x0) && (*0x85bc == 0x0)) goto loc_62024;
+goto loc_61b6a;
+
+loc_62024:
+r5 = sub_68b5c(r10, *(r8 + 0x594));
+asm{  };
+if (arg_5C != 0x0) {
+}
+if ((
+loc_62038:) && (*(r5 + 0x4) >= arg_5C)) goto loc_62042;
+goto loc_620ac;
+
+loc_62042:
+gettimeofday(&arg_17C, 0x0);
+r1 = **(r5 + 0x8);
+if (r1 == 0x0) goto loc_62114;
+goto loc_62052;
+
+loc_62114:
+loc_5c744(r10, r1);
+r11 = 0x59;
+*arg_68 = 0x0;
+goto loc_61a48;
+
+loc_62052:
+r12 = arg_17C;
+r6 = 0xffffffff;
+lr = arg_180;
+r0 = 0x0;
+do {
+r4 = *r1;
+if (*(r4 + 0x34) == 0x0) {
+r2 = *(r4 + 0x13c);
+r5 = *(r4 + 0x138);
+asm{ smmulne    r2, r2, r3 };
+r2 = (SAR(lr - r2, 0x6)) + (lr - r2);
+r3 = r12 - r5;
+asm{ mlane      r2, r3, r9, r2 };
+asm{  };
+if (r2 > r6) {
+r0 = r4;
+}
+if (CPU_FLAGS & LE) {
+r6 = r2;
+}
+}
+r1 = *(r1 + 0x8);
+} while (r1 != 0x0);
+if (r0 == 0x0) goto loc_62114;
+*r0 = r8;
+sub_5c558(r0, 0x0);
+
+loc_620ac:
+if (arg_58 == 0x0) goto loc_620cc;
+goto loc_620b0;
+
+loc_620cc:
+r0 = *r10;
+arg_5C = r0;
+r6 = *(r8 + 0x594);
+r5 = sub_68b5c(r10, *(r0 + 0x594));
+if (r5 == 0x0) goto loc_62126;
+goto loc_620e4;
+
+loc_62126:
+r11 = malloc(0xc);
+r4 = r10;
+if (r11 == 0x0) goto loc_62310;
+goto loc_62138;
+
+loc_62310:
+*(r4 + 0x34) = 0x1;
+*(r4 + 0x1e8) = 0x0;
+r10 = r4;
+*(r8 + 0x86e4) = 0x0;
+r5 = r8;
+*(r8 + 0x8698) = 0x0;
+if (*(r8 + 0x300) == 0x0) goto loc_62338;
+goto loc_62334;
+
+loc_62338:
+if (*(r5 + 0x244) != 0x5) goto loc_62346;
+goto loc_62340;
+
+loc_62346:
+gettimeofday(&arg_17C, 0x0);
+d16 = arg_17C;
+asm{ vst1gt.32  {d16, d17}, [r0] };
+*(r5 + 0x8c) = 0x1;
+*(r5 + 0x68) = 0x0;
+*(r5 + 0x64) = 0x0;
+*(r5 + 0xdc) = r5 + 0x5b0;
+*(r5 + 0xe0) = 0x45b1 + r5;
+*(r5 + 0x98) = *(r5 + 0x5a8);
+asm{ addwgt     r0, r5, #0x4a4 };
+*(r5 + 0xf0) = 0x0;
+*(r5 + 0x5a0) = 0x0;
+*(r5 + 0x59c) = 0x0;
+r4 = r5;
+asm{ vst1ne.32  {d8, d9}, [r0] };
+r2 = *(r5 + 0x1fc);
+r3 = *(r5 + 0x200);
+*(r5 + 0x86c8) = r3;
+*(r5 + 0x86c4) = r2;
+if ((r1 == 0x0) && (*(r4 + 0x3b4) == 0x0)) goto loc_62414;
+goto loc_623ba;
+
+loc_62414:
+r0 = 0x86b8;
+r1 = 0x0;
+
+loc_6241a:
+*(r4 + r0) = r1;
+r1 = *(r4 + 0x15c);
+*(r10 + 0x294) = r1;
+*(r10 + 0x298) = *(r4 + 0x1b0);
+r5 = sub_6003c(r4, 0x0, 0x1);
+r0 = *(r10 + 0x1cc);
+r1 = r10;
+if (r0 != 0x0) {
+r11 = 0x0;
+*arg_60 = r11;
+}
+else {
+sub_68c64(r1 + 0x84);
+r0 = *(r1 + 0x9c);
+r1 = r1;
+asm{  };
+if (r0 != 0x0) {
+r0 = *(int8_t *)r0;
+}
+if (CPU_FLAGS & E) {
+}
+if (
+loc_62466:) {
+r2 = *(r1 + 0xa8);
+r4 = r1;
+*(r1 + 0xa4) = r2;
+r1 = *(r1 + 0x8c);
+arg_17C = 0x0;
+if (r5 >= 0x0) {
+r0 = sub_67ec0(r4, r1, r2, &arg_17C);
+if (r0 != -0x2) {
+if (r0 != 0x1) {
+r11 = 0x0;
+asm{  };
+if (arg_17C == 0x0) {
+r11 = 0x6;
+}
+}
+else {
+r11 = 0x0;
+*arg_60 = 0x1;
+}
+}
+else {
+r11 = 0x1c;
+}
+}
+else {
+r11 = 0x1c;
+}
+}
+else {
+r4 = r1;
+sub_68c64(r4 + 0x94);
+r1 = *(r4 + 0x9c);
+r2 = *(r4 + 0xa4);
+arg_17C = 0x0;
+if (r5 >= 0x0) {
+r0 = sub_67ec0(r4, r1, r2, &arg_17C);
+if (r0 == -0x2) {
+r11 = 0x1c;
+}
+else {
+if (r0 == 0x1) {
+r11 = 0x0;
+*arg_60 = 0x1;
+}
+else {
+r11 = 0x0;
+asm{  };
+if (arg_17C == 0x0) {
+r11 = 0x5;
+}
+}
+}
+}
+else {
+r11 = 0x1c;
+}
+}
+*(r4 + 0x3c) = arg_17C;
+}
+goto loc_61a48;
+
+loc_623ba:
+r8 = r4 + 0x86bc;
+if (*(r4 + 0x86bc) != 0x0) {
+r0 = *(r4 + 0x86c0);
+free(r0);
+asm{ ldrdeq     r2, r3, [r5] };
+}
+if (r0 != 0x0) {
+r0 = sub_5a7ac("%llu-", r2, r3, r3);
+}
+else {
+r0 = *(r4 + 0x3b4);
+r0 = sub_2f4b4(r0);
+}
+*(r4 + 0x86c0) = r0;
+asm{  };
+if (r0 != 0x0) {
+r0 = 0x1;
+}
+*r8 = r0;
+if (CPU_FLAGS & E) goto loc_61a44;
+r0 = 0x86b8;
+r1 = 0x1;
+goto loc_6241a;
+
+loc_62340:
+r0 = 0x1;
+
+loc_62342:
+*(r5 + 0x244) = r0;
+goto loc_62346;
+
+loc_62334:
+r0 = 0x5;
+goto loc_62342;
+
+loc_62138:
+asm{ vmovne.i32 d16, #0x0 } << 0x10 | 0x0;
+*r11 = d16;
+r0 = malloc(0x10);
+if (r0 == 0x0) goto loc_62308;
+goto loc_6214c;
+
+loc_62308:
+free(r11);
+
+loc_6230e:
+r4 = r10;
+goto loc_62310;
+
+loc_6214c:
+*r0 = 0x0;
+*(r0 + 0x4) = 0x0;
+*(r0 + 0x8) = 0x68c99;
+*(r0 + 0xc) = 0x0;
+*(r11 + 0x8) = r0;
+r0 = *(r10 + 0x1d0);
+r2 = *(int16_t *)(r10 + 0x454);
+COND = r0 == 0x0;
+r0 = arg_4C;
+asm{ it         ne };
+if (!COND) {
+r0 = r10 + 0x9c;
+}
+r1 = *r0;
+r5 = sub_5a7ac("%s:%d", r1, r2, r3);
+if (r5 == 0x0) goto loc_621b2;
+goto loc_6218c;
+
+loc_621b2:
+sub_68ca0(r11);
+goto loc_6230e;
+
+loc_6218c:
+r4 = *(arg_5C + 0x594);
+r4 = sub_5c344(r4, r5, strlen(r5), r11);
+free(r5);
+r5 = r11;
+if (r4 != 0x0) goto loc_620e8;
+goto loc_621b2;
+
+loc_620e8:
+r0 = *(r5 + 0x8);
+if (sub_5c468(r0, *(r0 + 0x4), r10) == 0x0) goto loc_622f2;
+goto loc_620f8;
+
+loc_622f2:
+r4 = r10;
+if (r11 == 0x0) goto loc_62310;
+r0 = *(arg_5C + 0x594);
+sub_5c984(r0, r11);
+goto loc_6230e;
+
+loc_620f8:
+*(r10 + 0x464) = r5;
+*(r5 + 0x4) = *(r5 + 0x4) + 0x1;
+r0 = *(r6 + 0x1c);
+*(r6 + 0x1c) = r0 + 0x1;
+*(r10 + 0x38) = r0;
+*(r6 + 0x18) = *(r6 + 0x18) + 0x1;
+goto loc_6230e;
+
+loc_620e4:
+r11 = 0x0;
+goto loc_620e8;
+
+loc_620b0:
+r0 = *(r8 + 0x594);
+r1 = *(r0 + 0x18);
+if (r1 < arg_58) goto loc_620cc;
+r0 = sub_5c67c(r0);
+if (r0 == 0x0) goto loc_62114;
+*r0 = r8;
+sub_5c558(r0, 0x0);
+goto loc_620cc;
+
+loc_61b6a:
+r4 = sub_68b1c();
+arg_44 = 0x0;
+if (r4 != 0x0) {
+COND = sub_64748(*(r8 + 0x40), r10) != 0x0;
+r0 = arg_44;
+asm{  };
+if (!COND) {
+r0 = r4;
+}
+arg_44 = r0;
+}
+r0 = sub_68b5c(r10, *(r8 + 0x594));
+if (r0 == 0x0) goto loc_62024;
+r1 = *r0;
+asm{  };
+if (r1 != 0x2) {
+r2 = *(r8 + 0x40);
+}
+if (CPU_FLAGS & E) {
+}
+if (
+loc_61bae:) {
+r3 = 0x0;
+}
+else {
+r3 = *(r2 + 0xa0);
+}
+if (arg_44 == 0x0) goto loc_61bcc;
+goto loc_61bbc;
+
+loc_61bcc:
+arg_44 = 0x0;
+
+loc_61bd0:
+r6 = **(r0 + 0x8);
+if (r6 == 0x0) goto loc_62024;
+arg_34 = r10 + 0x180;
+arg_2C = r3;
+arg_38 = 0x0;
+r0 = 0x0;
+asm{  };
+if (r3 == 0x0) {
+r0 = 0x1;
+}
+arg_24 = r0;
+r0 = 0x0;
+asm{  };
+if (arg_44 == 0x0) {
+r0 = 0x1;
+}
+arg_20 = r3;
+arg_28 = r0;
+
+loc_61c00:
+r11 = *r6;
+r1 = r8;
+r6 = *(r6 + 0x8);
+r0 = sub_68bb0(r11, r1);
+if (r0 != 0x0) goto loc_61fd0;
+goto loc_61c14;
+
+loc_61fd0:
+if (r6 != 0x0) goto loc_61c00;
+if (arg_38 != 0x0) goto loc_61fe2;
+goto loc_62024;
+
+loc_61fe2:
+r1 = *(*(arg_38 + 0x23c) + 0x3c);
+if (sub_68b1c() == 0x0) goto loc_621ba;
+goto loc_61ff6;
+
+loc_621ba:
+*(arg_38 + 0x34) = 0x1;
+r0 = *(r10 + 0x94);
+free(r0);
+sub_5c908(arg_34);
+r0 = *r10;
+r1 = arg_38;
+*arg_38 = r0;
+r0 = *(r10 + 0x1d8);
+*(arg_38 + 0x1d8) = r0;
+if (r0 != 0x0) {
+r5 = r1;
+r0 = *(r5 + 0x114);
+free(r0);
+*(r5 + 0x114) = 0x0;
+r0 = *(r5 + 0x118);
+free(r0);
+*(r5 + 0x118) = 0x0;
+asm{ vmoveq.i32 d16, #0x0 } << 0x10 | 0x0;
+r0 = *(r10 + 0x114);
+r1 = r5;
+*(r5 + 0x114) = r0;
+*(r5 + 0x118) = *(r10 + 0x118);
+*(r10 + 0x114) = d16;
+}
+r0 = *(r10 + 0x1dc);
+*(r1 + 0x1dc) = r0;
+if (r0 != 0x0) {
+r5 = r1;
+r0 = *(r5 + 0x124);
+free(r0);
+*(r5 + 0x124) = 0x0;
+r0 = *(r5 + 0x128);
+free(r0);
+*(r5 + 0x128) = 0x0;
+asm{ vmovne.i32 d16, #0x0 } << 0x10 | 0x0;
+r0 = *(r10 + 0x124);
+r1 = r5;
+*(r5 + 0x124) = r0;
+*(r5 + 0x128) = *(r10 + 0x128);
+*(r10 + 0x124) = d16;
+}
+r0 = *(r1 + 0x84);
+free(r0);
+*(r1 + 0x84) = 0x0;
+asm{ vld1.32    {d16, d17}, [r0] };
+asm{ vst1.32    {d16, d17}, [r5] };
+sub_67bec(r1);
+*(r1 + 0x1cc) = 0x1;
+r0 = *(r10 + 0x114);
+free(r0);
+*(r10 + 0x114) = 0x0;
+r0 = *(r10 + 0x118);
+free(r0);
+*(r10 + 0x118) = 0x0;
+r0 = *(r10 + 0x124);
+free(r0);
+*(r10 + 0x124) = 0x0;
+r0 = *(r10 + 0x128);
+free(r0);
+*(r10 + 0x128) = 0x0;
+r0 = *(r10 + 0x450);
+free(r0);
+*(r10 + 0x450) = 0x0;
+r0 = *(r10 + 0x280);
+sub_5bb28(r0, 0x0);
+r0 = *(r10 + 0x284);
+sub_5bb28(r0, 0x0);
+asm{ vmov.i32   d16, #0x0 } << 0x10 | 0x0;
+*(r10 + 0x280) = d16;
+r0 = *(r10 + 0x288);
+free(r0);
+free(r10);
+r4 = r1;
+*arg_68 = r1;
+sub_68c64(r1 + 0x84);
+goto loc_62310;
+
+loc_61ff6:
+asm{ ldrd       r0, r1, [r0, #0x280] };
+if ((*0xfeedfada != -*(r1 + 0xc)) && (*(*(arg_38 + 0x464) + 0x4) < arg_5C)) goto loc_62016;
+goto loc_621ba;
+
+loc_62016:
+if (*(*(r8 + 0x594) + 0x18) >= arg_58) goto loc_621ba;
+goto loc_62024;
+
+loc_61c14:
+asm{ ldrd       r0, r1, [r11, #0x280] };
+r3 = *(r1 + 0xc);
+r4 = r3 + *0xfeedfada;
+if (arg_44 == 0x0) goto loc_61c32;
+goto loc_61c22;
+
+loc_61c32:
+if ((r4 == 0x0) && (*(r11 + 0x148) != 0xffffffff)) goto loc_61c44;
+goto loc_61fd0;
+
+loc_61c44:
+if (*(r11 + 0x1c8) != 0x0) goto loc_61fd0;
+
+loc_61c7c:
+r0 = *(r10 + 0x23c);
+r1 = *(r11 + 0x23c);
+r5 = *(r0 + 0x40);
+if ((((((*(r1 + 0x40) ^ r5) & 0x1) == 0x0) || ((*(r1 + 0x3c) & *(r0 + 0x3c)) != 0x0))) && ((((r5 & 0x1) == 0x0) || ((*(r8 + 0x254) == *(r11 + 0x448)) && (*(r8 + 0x258) == *(r11 + 0x44c)))))) goto loc_61cbc;
+goto loc_61fd0;
+
+loc_61cbc:
+if ((*(r10 + 0x1d0) == *(r11 + 0x1d0)) && (((arg_44 != 0x0) || (*(r11 + 0x34) == 0x0)))) goto loc_61cd8;
+goto loc_61fd0;
+
+loc_61cd8:
+r1 = *(r10 + 0x450);
+r0 = *(int16_t *)(r10 + 0x454);
+asm{ it         eq };
+if (r1 == 0x0) {
+}
+if (
+loc_61ce6:) goto loc_61d18;
+goto loc_61ce8;
+
+loc_61d18:
+if (((r5 & 0x80) == 0x0) && (((sub_68c00(*(r10 + 0x114), *(r11 + 0x114)) == 0x0) || (sub_68c00(*(r10 + 0x118), *(r11 + 0x118)) == 0x0)))) goto loc_61fd0;
+r0 = *(r10 + 0x1d4);
+arg_30 = *(r10 + 0x23c);
+if ((r0 != 0x0) && ((*(int8_t *)(arg_30 + 0x40) & 0x1) == 0x0)) goto loc_61d5a;
+goto loc_61d8e;
+
+loc_61d5a:
+if (*(r11 + 0x1d4) == 0x0) goto loc_61e1a;
+goto loc_61d62;
+
+loc_61e1a:
+if ((*(r11 + 0x1d0) != 0x0) && (*(r10 + 0x12c) == *(r11 + 0x12c))) goto loc_61e32;
+goto loc_61fd0;
+
+loc_61e32:
+if ((*(r10 + 0x1fc) == *(r11 + 0x1fc)) && (sub_65d94(*(r10 + 0x9c), *(r11 + 0x9c)) != 0x0)) goto loc_61e52;
+goto loc_61fd0;
+
+loc_61e52:
+if (*(r10 + 0xa4) == *(r11 + 0xa4)) goto loc_61ee8;
+goto loc_61fd0;
+
+loc_61ee8:
+r0 = 0x0;
+asm{  };
+if (r4 == 0x0) {
+r0 = 0x1;
+}
+if ((r0 | arg_28) != 0x0) goto loc_61fde;
+goto loc_61ef8;
+
+loc_61fde:
+arg_38 = r11;
+goto loc_61fe2;
+
+loc_61ef8:
+r0 = 0x0;
+asm{  };
+if (r4 >= arg_2C) {
+r0 = 0x1;
+}
+if ((r0 | arg_24) == 0x0) goto loc_61fd0;
+if (r8 == 0x0) goto loc_61fba;
+goto loc_61f10;
+
+loc_61fba:
+if (arg_2C == 0x0) goto loc_61fde;
+r1 = arg_20;
+r0 = arg_38;
+asm{  };
+if (r4 >= r1) {
+r0 = r11;
+}
+arg_38 = r0;
+asm{  };
+if (CPU_FLAGS & S) {
+r1 = r4;
+}
+arg_20 = r1;
+goto loc_61fd0;
+
+loc_61f10:
+r0 = *(r8 + 0x40);
+if (r0 != 0x0) {
+r3 = *(r0 + 0xa4);
+lr = *(r0 + 0xa8);
+r12 = SAR(r3, 0x1f);
+r9 = SAR(lr, 0x1f);
+}
+else {
+r3 = 0x0;
+r12 = 0x0;
+lr = 0x0;
+r9 = 0x0;
+}
+r0 = *(r11 + 0x284);
+r2 = 0x0;
+if (r0 != 0x0) {
+r5 = 0x0;
+r1 = 0x0;
+asm{  };
+if (r3 == 0x0) {
+r5 = 0x1;
+}
+asm{  };
+if (r12 < 0x0) {
+r1 = 0x1;
+}
+asm{  };
+if (CPU_FLAGS & NE) {
+r1 = r5;
+}
+if (r1 == 0x0) {
+r0 = *r0;
+if (r0 != 0x0) {
+r0 = *r0;
+r2 = 0x0;
+asm{ ldrdeq     r0, r1, [r0, #0x4c] };
+COND = r0 < r3;
+r0 = 0x0;
+asm{ it         hi };
+if (!COND) {
+r0 = 0x1;
+}
+asm{  };
+if (r1 > r12) {
+r2 = 0x1;
+}
+asm{  };
+if (CPU_FLAGS & NE) {
+r2 = r0;
+}
+}
+}
+}
+r0 = 0x0;
+r1 = 0x0;
+asm{  };
+if (lr == 0x0) {
+r0 = 0x1;
+}
+asm{  };
+if (r9 < 0x0) {
+r1 = 0x1;
+}
+asm{  };
+if (CPU_FLAGS & NE) {
+r1 = r0;
+}
+if (r1 != 0x0) goto loc_61fb8;
+goto loc_61f9a;
+
+loc_61fb8:
+if (r2 != 0x0) goto loc_61fd0;
+goto loc_61fba;
+
+loc_61f9a:
+asm{ ldrdeq     r0, r1, [r11, #0x20] };
+COND = r0 < lr;
+r0 = 0x0;
+asm{ it         hi };
+if (!COND) {
+r0 = 0x1;
+}
+COND = r1 <= r9;
+r1 = 0x0;
+asm{  };
+if (!COND) {
+r1 = 0x1;
+}
+asm{  };
+if (CPU_FLAGS & NE) {
+r1 = r0;
+}
+if (r1 != 0x0) goto loc_61fd0;
+goto loc_61fb8;
+
+loc_61d62:
+r0 = *(r10 + 0x1fc);
+asm{  };
+if (r0 != 0x0) {
+r0 = *(r11 + 0x1fc);
+}
+if (CPU_FLAGS & E) {
+}
+if ((
+loc_61d70:) && (sub_65d94(*(r10 + 0x9c), *(r11 + 0x9c)) != 0x0)) goto loc_61d82;
+goto loc_61e1a;
+
+loc_61d82:
+if (*(r10 + 0xa4) != *(r11 + 0xa4)) goto loc_61e1a;
+
+loc_61d8e:
+r5 = *(r11 + 0x23c);
+if ((((sub_65d94(*arg_30, *r5) != 0x0) || ((*(r5 + 0x3c) & *(arg_30 + 0x3c)) != 0x0))) && ((sub_65d94(*arg_4C, *(r11 + 0x8c)) != 0x0) && (*(r10 + 0xa8) == *(r11 + 0xa8)))) goto loc_61dca;
+goto loc_61fd0;
+
+loc_61dca:
+if ((*(int8_t *)(arg_30 + 0x40) & 0x1) == 0x0) goto loc_61ee8;
+if ((*arg_34 == *(r11 + 0x180)) && (*(r10 + 0x188) == *(r11 + 0x188))) goto loc_61df4;
+goto loc_61fd0;
+
+loc_61df4:
+if (*(r10 + 0x18c) != *(r11 + 0x18c)) goto loc_61fd0;
+r0 = *(r10 + 0x194);
+r1 = *(r11 + 0x194);
+asm{  };
+if (r0 != 0x0) {
+}
+if (
+loc_61e10:) goto loc_61e60;
+goto loc_61e12;
+
+loc_61e60:
+if ((r0 | r1) != 0x0) goto loc_61fd0;
+
+loc_61e66:
+r0 = *(r10 + 0x198);
+r1 = *(r11 + 0x198);
+asm{  };
+if (r0 != 0x0) {
+}
+if (
+loc_61e74:) goto loc_61e7e;
+goto loc_61e76;
+
+loc_61e7e:
+if ((r0 | r1) != 0x0) goto loc_61fd0;
+
+loc_61e84:
+r0 = *(r10 + 0x1a4);
+r1 = *(r11 + 0x1a4);
+asm{  };
+if (r0 != 0x0) {
+}
+if (
+loc_61e92:) goto loc_61e9c;
+goto loc_61e94;
+
+loc_61e9c:
+if ((r0 | r1) != 0x0) goto loc_61fd0;
+
+loc_61ea2:
+r0 = *(r10 + 0x1a8);
+r1 = *(r11 + 0x1a8);
+asm{  };
+if (r0 != 0x0) {
+}
+if (
+loc_61eb0:) goto loc_61eba;
+goto loc_61eb2;
+
+loc_61eba:
+if ((r0 | r1) != 0x0) goto loc_61fd0;
+
+loc_61ec0:
+r0 = *(r10 + 0x1ac);
+r1 = *(r11 + 0x1ac);
+asm{  };
+if (r0 != 0x0) {
+}
+if (
+loc_61ece:) goto loc_61ed8;
+goto loc_61ed0;
+
+loc_61ed8:
+if ((r0 | r1) != 0x0) goto loc_61fd0;
+
+loc_61ede:
+if (*(r11 + 0x174) != 0x2) goto loc_61fd0;
+goto loc_61ee8;
+
+loc_61ed0:
+if (sub_65d94(r0, r1) != 0x0) goto loc_61ede;
+goto loc_61fd0;
+
+loc_61eb2:
+if (sub_65d94(r0, r1) != 0x0) goto loc_61ec0;
+goto loc_61fd0;
+
+loc_61e94:
+if (sub_65d94(r0, r1) != 0x0) goto loc_61ea2;
+goto loc_61fd0;
+
+loc_61e76:
+if (sub_65d94(r0, r1) != 0x0) goto loc_61e84;
+goto loc_61fd0;
+
+loc_61e12:
+if (sub_65d94(r0, r1) != 0x0) goto loc_61e66;
+goto loc_61fd0;
+
+loc_61ce8:
+if (*(int16_t *)(r11 + 0x454) != r0) goto loc_61fd0;
+r0 = *(r10 + 0x458);
+if (*(r11 + 0x458) != r0) goto loc_61fd0;
+asm{  };
+if (r1 != 0x0) {
+r0 = *(r11 + 0x450);
+}
+if (CPU_FLAGS & E) {
+}
+if ((
+loc_61d0a:) && (strcmp(r0, r1) == 0x0)) goto loc_61d18;
+goto loc_61fd0;
+
+loc_61c22:
+if (*(r11 + 0x228) != 0x0) goto loc_61c7c;
+r0 = *r0;
+if (r0 != 0x0) {
+r0 = *r0;
+}
+else {
+r0 = 0x0;
+}
+r1 = *r1;
+if (r1 != 0x0) {
+r2 = *r1;
+}
+else {
+r2 = 0x0;
+}
+if (r0 == 0x0) goto loc_61c68;
+goto loc_61c60;
+
+loc_61c68:
+if (r2 == 0x0) goto loc_61c7c;
+
+loc_61c72:
+if (sub_68b1c() == 0x0) goto loc_61fd0;
+goto loc_61c7c;
+
+loc_61c60:
+r1 = *(r11 + 0x23c);
+goto loc_61c72;
+
+loc_61bbc:
+if (r1 > 0x0) goto loc_61bd0;
+if (CPU_FLAGS & NE) goto loc_61bcc;
+r1 = *(r8 + 0x46c);
+if (r1 != 0x0) goto loc_62114;
+goto loc_61bcc;
+
+loc_61abc:
+r0 = sub_2f4b4(r0);
+*(r10 + 0x1a4) = r0;
+if (r0 != 0x0) goto loc_61ad8;
+goto loc_61a44;
+
+loc_61aa2:
+r0 = sub_2f4b4(r0);
+*(r10 + 0x1a8) = r0;
+if (r0 != 0x0) goto loc_61ab6;
+goto loc_61a44;
+
+loc_61a88:
+r0 = sub_2f4b4(r0);
+*(r10 + 0x1ac) = r0;
+if (r0 != 0x0) goto loc_61a9c;
+goto loc_61a44;
+
+loc_61a6e:
+r0 = sub_2f4b4(r0);
+*(r10 + 0x194) = r0;
+if (r0 != 0x0) goto loc_61a82;
+goto loc_61a44;
+
+loc_61a2c:
+r0 = sub_2f4b4(r1);
+*(r10 + 0x198) = r0;
+if (r0 == 0x0) goto loc_61a44;
+r0 = *(r8 + 0x260);
+goto loc_61a6c;
+
+loc_61974:
+r11 = (*0x5)(r10, *0x5, 0xd0);
+if (r11 != 0x0) goto loc_61a48;
+r0 = *(r10 + 0x23c);
+goto loc_61984;
+
+loc_61924:
+r0 = sub_2f4b4(arg_40);
+*(r10 + 0x11c) = r0;
+if (r0 == 0x0) goto loc_61a44;
+goto loc_61934;
+
+loc_618c8:
+r0 = sub_2f4b4(arg_48);
+*(r10 + 0x114) = r0;
+if (r0 == 0x0) goto loc_61a3e;
+r4 = r10 + 0x114;
+r0 = arg_54;
+goto loc_61906;
+
+loc_6133e:
+r0 = *(arg_50 + 0x3ac);
+arg_34 = *arg_4C;
+if (arg_48 != 0x0) {
+r1 = *(int8_t *)arg_48;
+asm{  };
+if (r1 != 0x0) {
+r1 = 0x1;
+}
+}
+else {
+r1 = 0x0;
+}
+arg_30 = r1;
+if (r0 == 0x0) goto loc_613f0;
+goto loc_613de;
+
+loc_613f0:
+r4 = sub_68a9c("HOME");
+if (r4 == 0x0) goto loc_618b2;
+r5 = sub_5a7ac("%s%s%s", r4, "/", ".netrc");
+free(r4);
+if (r5 == 0x0) goto loc_61a44;
+arg_44 = fopen(r5, "r");
+free(r5);
+
+loc_61450:
+if (arg_44 == 0x0) goto loc_618b2;
+r8 = &arg_17C;
+arg_38 = 0x1;
+arg_28 = 0x0;
+r6 = 0x0;
+r5 = 0x0;
+arg_2C = 0x0;
+
+loc_615c6:
+if (fgets(r8, 0x100, arg_44) != 0x0) goto loc_61474;
+goto loc_61894;
+
+loc_61474:
+r11 = sub_65df8();
+if (r11 == 0x0) goto loc_615c6;
+if (arg_48 == 0x0) goto loc_614aa;
+goto loc_61492;
+
+loc_614aa:
+if (r5 == 0x2) goto loc_614ce;
+goto loc_614ae;
+
+loc_614ce:
+if ((r6 & 0xff) == 0x0) goto loc_61502;
+goto loc_614d4;
+
+loc_61502:
+if ((arg_2C & 0xff) == 0x0) goto loc_6154c;
+goto loc_6150a;
+
+loc_6154c:
+if (sub_65d94("login", r11) == 0x0) goto loc_61586;
+goto loc_6155e;
+
+loc_61586:
+r0 = sub_65d94("password", r11);
+r6 = 0x0;
+if (r0 == 0x0) goto loc_615a2;
+goto loc_6159a;
+
+loc_615a2:
+COND = sub_65d94("machine", r11) == 0x0;
+r0 = arg_28;
+asm{  };
+if (!COND) {
+r6 = 0x0;
+r0 = r6;
+}
+r5 = 0x1;
+arg_28 = r0;
+asm{  };
+if (CPU_FLAGS & NE) {
+r5 = 0x2;
+}
+
+loc_6157e:
+arg_2C = 0x0;
+
+loc_61472:
+goto loc_61474;
+
+loc_6159a:
+arg_2C = 0x1;
+
+loc_6159e:
+r5 = 0x2;
+goto loc_61472;
+
+loc_6155e:
+r6 = 0x1;
+arg_2C = 0x0;
+goto loc_6159e;
+
+loc_6150a:
+r6 = 0x0;
+r0 = 0x0;
+asm{  };
+if (arg_28 == 0x0) {
+r0 = 0x1;
+}
+if ((arg_30 & r0) == 0x0) goto loc_61566;
+goto loc_6151e;
+
+loc_61566:
+free(arg_54);
+r0 = sub_2f4b4(r11);
+r6 = 0x0;
+arg_54 = r0;
+if (r0 == 0x0) goto loc_6188a;
+goto loc_6157c;
+
+loc_6188a:
+arg_38 = 0xffffffff;
+arg_54 = 0x0;
+
+loc_61894:
+r6 = arg_48;
+
+loc_61896:
+fclose(arg_44);
+if (arg_38 > 0x0) goto loc_618b0;
+goto loc_618a2;
+
+loc_618b0:
+arg_48 = r6;
+goto loc_618b2;
+
+loc_618a2:
+if (CPU_FLAGS & L) goto loc_61aca;
+goto loc_618a6;
+
+loc_61aca:
+r11 = 0x1b;
+r4 = r6;
+
+loc_61362:
+r8 = *___stack_chk_guard;
+goto loc_606a4;
+
+loc_618a6:
+*(r10 + 0x210) = 0x1;
+*(r10 + 0x1d8) = 0x1;
+goto loc_618b0;
+
+loc_6157c:
+r5 = 0x2;
+goto loc_6157e;
+
+loc_6151e:
+r5 = 0x2;
+arg_2C = 0x0;
+arg_28 = 0x0;
+goto loc_61472;
+
+loc_614d4:
+if (arg_30 != 0x1) goto loc_6152a;
+goto loc_614da;
+
+loc_6152a:
+free(arg_48);
+r0 = sub_2f4b4(r11);
+r6 = 0x0;
+arg_48 = r0;
+if (r0 != 0x0) goto loc_6159e;
+arg_38 = 0xffffffff;
+goto loc_61896;
+
+loc_614da:
+arg_28 = sub_65d94(arg_48, r11);
+r6 = 0x0;
+goto loc_6159e;
+
+loc_614ae:
+if (r5 != 0x1) goto loc_614e8;
+goto loc_614b2;
+
+loc_614e8:
+if (r5 != 0x0) goto loc_61472;
+if (sub_65d94("machine", r11) == 0x0) goto loc_61540;
+goto loc_614fe;
+
+loc_61540:
+r0 = "default";
+
+loc_614b4:
+r5 = sub_65d94(r0, r11);
+r1 = arg_38;
+asm{  };
+if (r5 != 0x0) {
+r1 = 0x0;
+}
+arg_38 = r1;
+asm{  };
+if (CPU_FLAGS & E) {
+r5 = 0x2;
+}
+goto loc_61472;
+
+loc_614fe:
+r5 = 0x1;
+goto loc_61472;
+
+loc_614b2:
+r0 = arg_34;
+goto loc_614b4;
+
+loc_61492:
+r0 = *(int8_t *)arg_48;
+asm{  };
+if (r0 != 0x0) {
+r0 = arg_54;
+}
+if (CPU_FLAGS & E) {
+}
+if ((
+loc_6149e:) && (*(int8_t *)arg_54 != 0x0)) goto loc_61894;
+goto loc_614aa;
+
+loc_613de:
+arg_44 = fopen(r0, "r");
+goto loc_61450;
+
+loc_61316:
+free(arg_40);
+r0 = *(arg_50 + 0x3ec);
+r0 = sub_2f4b4(r0);
+arg_40 = r0;
+if (r0 == 0x0) goto loc_6139c;
+goto loc_6132c;
+
+loc_6139c:
+r11 = 0x1b;
+r0 = 0x0;
+r10 = arg_64;
+r8 = *___stack_chk_guard;
+goto loc_61a60;
+
+loc_612f8:
+free(arg_54);
+r0 = *(arg_50 + 0x3e8);
+r0 = sub_2f4b4(r0);
+arg_54 = r0;
+if (r0 == 0x0) goto loc_61378;
+goto loc_6130e;
+
+loc_61378:
+r11 = 0x1b;
+r5 = 0x0;
+r10 = arg_64;
+r0 = arg_40;
+r4 = arg_48;
+r8 = *___stack_chk_guard;
+goto loc_6048e;
+
+loc_612da:
+free(arg_48);
+r0 = *(arg_50 + 0x3e4);
+r0 = sub_2f4b4(r0);
+arg_48 = r0;
+if (r0 == 0x0) goto loc_6135c;
+goto loc_612f0;
+
+loc_6135c:
+r11 = 0x1b;
+r4 = 0x0;
+goto loc_61362;
+
+loc_611a0:
+r0 = *(r10 + 0x224);
+arg_180 = 0x0;
+arg_17C = 0x0;
+arg_184 = 0x0;
+if (r0 != 0x0) {
+if (*(arg_50 + 0x2d0) == 0x0) {
+r0 = *(arg_50 + 0x2d8);
+asm{  };
+if (r0 != 0x0) {
+}
+}
+sub_5b58c();
+}
+r1 = *(r10 + 0x240);
+r3 = *(r10 + 0x8c);
+r0 = *(arg_50 + 0x86b4);
+COND = r0 != 0x0;
+lr = *(r10 + 0x1e0);
+r12 = *arg_2C;
+r1 = *r1;
+r6 = "/";
+asm{  };
+if (!COND) {
+r6 = 0x12e4e4;
+}
+asm{  };
+if (lr == 0x0) {
+}
+r2 = "[";
+asm{ stmeq.w    sp, {r4, r9} };
+r0 = "%s://%s%s%s:%hu%s%s%s";
+arg_8 = r6;
+arg_C = r12;
+arg_10 = &arg_17C;
+asm{  };
+if (CPU_FLAGS & NE) {
+r2 = 0x12e4e4;
+}
+r4 = sub_5a7ac(r0, r1, r2, r3);
+if (r4 == 0x0) goto loc_612c6;
+goto loc_61296;
+
+loc_612c6:
+r11 = 0x1b;
+goto loc_612ca;
+
+loc_61296:
+if (*(arg_50 + 0x478) != 0x0) {
+r0 = *(arg_50 + 0x474);
+r0 = free(r0);
+asm{ vmoveq.i32 d16, #0x0 } << 0x10 | 0x0;
+asm{ addwne     r0, r5, #0x474 };
+*r0 = d16;
+}
+*(arg_50 + 0x474) = r4;
+*(arg_50 + 0x478) = 0x1;
+
+loc_612c0:
+r11 = 0x0;
+goto loc_612ca;
+
+loc_611c0:
+r11 = 0x0;
+if (r5 == 0x0) goto loc_612ca;
+r4 = r5 + 0x1;
+r0 = strtol(r4, &arg_7C, 0xa);
+if (0x0 == r0) goto loc_611e2;
+goto loc_611dc;
+
+loc_611e2:
+r11 = 0x0;
+*(int8_t *)r5 = r11;
+if (arg_7C == r4) goto loc_612ca;
+asm{ uxthne     r0, r0 };
+*(r10 + 0xa8) = r0;
+goto loc_612c0;
+
+loc_611dc:
+r11 = 0x3;
+goto loc_612ca;
+
+loc_60fd0:
+if (r5 != 0x0) goto loc_610ac;
+goto loc_60fd4;
+
+loc_610ac:
+if ((*(int8_t *)r5 != 0x0) && ((*(int8_t *)(*(r10 + 0x23c) + 0x40) & 0x10) == 0x0)) goto loc_610be;
+goto loc_610fe;
+
+loc_610be:
+r4 = strstr(r5, "://");
+r8 = r5;
+if (r4 == 0x0) goto loc_6162e;
+goto loc_610d8;
+
+loc_6162e:
+r0 = strchr(r8, 0x40);
+arg_44 = r0;
+if (r0 == 0x0) goto loc_616f6;
+goto loc_6163c;
+
+loc_616f6:
+if (*(int8_t *)r8 != 0x5b) goto loc_61746;
+goto loc_616fe;
+
+loc_61746:
+arg_44 = r8;
+
+loc_617b4:
+r0 = strchr(r8, 0x3a);
+if (r0 == 0x0) goto loc_617e8;
+goto loc_617be;
+
+loc_617e8:
+if (*(int8_t *)arg_44 != 0x2f) goto loc_61802;
+goto loc_617f0;
+
+loc_61802:
+r1 = 0x2f;
+r0 = strchr(arg_44, r1);
+asm{ itt        ne };
+if (r0 != 0x0) {
+r1 = 0x0;
+}
+if (CPU_FLAGS & E) {
+*(int8_t *)r0 = r1;
+}
+r0 = *(arg_50 + 0x128);
+if (r0 != 0x0) {
+*(r10 + 0xa4) = r0;
+}
+
+loc_6181e:
+r0 = sub_2f4b4(arg_44);
+r11 = 0x0;
+*(r10 + 0x94) = r0;
+*(r10 + 0x9c) = r0;
+asm{  };
+if (r0 == 0x0) {
+r11 = 0x1b;
+}
+
+loc_61838:
+free(r5);
+if (r11 != 0x0) goto loc_61a48;
+if (*(r10 + 0x12c) <= 0x1) {
+if ((*(int8_t *)(*(r10 + 0x23c) + 0x3c) & 0x3) == 0x0) {
+r0 = *(r10 + 0x1fc);
+asm{  };
+if (r0 == 0x0) {
+*(r10 + 0x23c) = 0x191828;
+}
+}
+r0 = 0x1;
+*(r10 + 0x1d4) = r0;
+}
+else {
+r0 = 0x0;
+*(r10 + 0x1d4) = r0;
+*(r10 + 0x1fc) = r0;
+}
+*(r10 + 0x1d0) = 0x1;
+goto loc_61116;
+
+loc_617f0:
+r11 = 0x5;
+goto loc_61838;
+
+loc_617be:
+arg_74 = 0x0;
+*(int8_t *)r0 = 0x0;
+r0 = strtol(r0 + 0x1, &arg_74, 0xa);
+r1 = arg_74;
+if (r1 != 0x0) {
+r1 = *(int8_t *)r1;
+asm{  };
+if (r1 != 0x0) {
+}
+if (
+loc_617da:) {
+if ((r0 < 0x10000) && (r1 == 0x20)) {
+*(r10 + 0xa4) = r0;
+}
+}
+else {
+asm{  };
+if (r0 < 0x10000) {
+*(r10 + 0xa4) = r0;
+}
+}
+}
+else {
+asm{  };
+if (r0 < 0x10000) {
+*(r10 + 0xa4) = r0;
+}
+}
+goto loc_6181e;
+
+loc_616fe:
+r0 = *(int8_t *)(r8 + 0x1);
+arg_44 = r8 + 0x1;
+if (r0 == 0x0) goto loc_6174c;
+goto loc_6170a;
+
+loc_6174c:
+r8 = arg_44;
+goto loc_617b4;
+
+loc_6170a:
+r1 = arg_44;
+
+loc_6171a:
+r11 = *_DefaultRuneLocale;
+r4 = r8;
+r8 = r1;
+asm{ uxtblt     r1, r0 };
+if (((*(int8_t *)(0x36 + r11 + r1) & 0x1) == 0x0) && (r1 != 0x2e)) goto loc_61732;
+goto loc_6173a;
+
+loc_61732:
+if (r1 == 0x25) goto loc_61752;
+goto loc_61736;
+
+loc_61752:
+r4 = r4 + 0x2;
+r1 = *(int8_t *)r4;
+
+loc_6175c:
+if (r1 == 0x0) goto loc_617b2;
+goto loc_61760;
+
+loc_617b2:
+r8 = r4;
+goto loc_617b4;
+
+loc_61760:
+asm{ uxtbne     r0, r1 };
+if (sign_extend_32(r1) >= 0x0) {
+r0 = *(0x34 + *_DefaultRuneLocale + r0);
+r0 = r0 & 0x100;
+}
+else {
+r0 = __maskrune(r0, 0x100);
+}
+if (r0 != 0x0) goto loc_61758;
+goto loc_61780;
+
+loc_61758:
+r4 = r4 + 0x1;
+r1 = *(int8_t *)r4;
+goto loc_6175c;
+
+loc_61780:
+r11 = *_DefaultRuneLocale;
+r0 = *(int8_t *)r4;
+if ((*(int8_t *)(0x36 + r11 + r0) & 0x1) != 0x0) goto loc_61758;
+asm{ uxtb       r1, r1 };
+if (r0 < 0x2f) goto loc_61758;
+asm{ it         ne };
+if (r0 != 0x5f) {
+}
+if (
+loc_617a0:) goto loc_61758;
+r8 = r4;
+
+loc_617a4:
+asm{ uxtbne     r0, r0 };
+asm{ itt        eq };
+if (r0 == 0x5d) {
+r0 = 0x0;
+}
+if (CPU_FLAGS & NE) {
+*(int8_t *)r8 = r0;
+r8 = r8 + 0x1;
+}
+goto loc_617b4;
+
+loc_61736:
+if (r1 != 0x3a) goto loc_617a4;
+
+loc_6173a:
+r4 = r4 + 0x2;
+r0 = *(int8_t *)r4;
+r1 = r4;
+if (r0 != 0x0) goto loc_6171a;
+goto loc_617b2;
+
+loc_6163c:
+arg_17C = 0x0;
+arg_7C = 0x0;
+var_0 = 0x0;
+r11 = sub_68738(r8, arg_44 - r8, &arg_17C, &arg_7C);
+if (r11 == 0x0) {
+r0 = *(r10 + 0x124);
+free(r0);
+*(r10 + 0x124) = 0x0;
+r4 = arg_17C;
+if ((r4 == 0x0) || (strlen(r4) > 0xff)) {
+r0 = sub_2f4b4(0x12e4e4);
+}
+else {
+r0 = sub_688f0(r4);
+}
+*(r10 + 0x124) = r0;
+if (r0 != 0x0) {
+r0 = *(r10 + 0x128);
+free(r0);
+r4 = arg_7C;
+*(r10 + 0x128) = 0x0;
+if ((r4 == 0x0) || (strlen(r4) > 0xff)) {
+r0 = sub_2f4b4(0x12e4e4);
+}
+else {
+r0 = sub_688f0(r4);
+}
+*(r10 + 0x128) = r0;
+if (r0 != 0x0) {
+r11 = 0x0;
+*(r10 + 0x1dc) = 0x1;
+r8 = 0x2;
+}
+else {
+r11 = 0x1b;
+}
+}
+else {
+r11 = 0x1b;
+}
+}
+free(arg_17C);
+free(arg_7C);
+if (r11 != 0x0) goto loc_61838;
+goto loc_616f6;
+
+loc_610d8:
+r0 = sub_64790("socks5h", r5, 0x7);
+r8 = r4 + 0x3;
+if (r0 == 0x0) goto loc_613ba;
+goto loc_610f8;
+
+loc_613ba:
+if (sub_64790("socks5", r5, 0x6) == 0x0) goto loc_615da;
+goto loc_613d2;
+
+loc_615da:
+if (sub_64790("socks4a", r5, 0x7) == 0x0) goto loc_61600;
+goto loc_615ee;
+
+loc_61600:
+if ((sub_64790("socks4", r5, 0x6) == 0x0) && (sub_64790("socks", r5, 0x5) == 0x0)) goto loc_6162e;
+r0 = 0x4;
+
+loc_6162a:
+*(r10 + 0x12c) = r0;
+goto loc_6162e;
+
+loc_615ee:
+r0 = 0x6;
+goto loc_6162a;
+
+loc_613d2:
+r0 = 0x5;
+goto loc_6162a;
+
+loc_610f8:
+*(r10 + 0x12c) = 0x7;
+goto loc_6162e;
+
+loc_60fd4:
+r11 = sub_68a9c("no_proxy");
+if (r11 == 0x0) {
+r11 = sub_68a9c("NO_PROXY");
+}
+if (sub_689b0(*arg_4C, r11) != 0x0) {
+r5 = 0x0;
+}
+else {
+r1 = **(r10 + 0x23c);
+r0 = *(int8_t *)r1;
+if (r0 != 0x0) {
+r5 = r1 + 0x1;
+r4 = &arg_17C;
+do {
+*(int8_t *)r4 = __tolower(sign_extend_32(r0));
+r4 = r4 + 0x1;
+r0 = *(int8_t *)r5;
+r5 = r5 + 0x1;
+} while (r0 != 0x0);
+}
+else {
+r4 = &arg_17C;
+}
+*(int8_t *)(r4 + 0x6) = 0x0;
+*(int16_t *)(r4 + 0x4) = 0x7978;
+*r4 = 0x6f72705f;
+r5 = sub_68a9c(&arg_17C);
+if (r5 == 0x0) {
+r4 = &arg_17C;
+r0 = sub_65d94("http_proxy", r4);
+if (r0 == 0x0) {
+r5 = 0x0;
+do {
+asm{ ldrsbeq    r0, [r4, r5] };
+r0 = sub_65e58(r0);
+*(int8_t *)(r4 + r5) = r0;
+asm{  };
+if ((r0 & 0xff) != 0x0) {
+r5 = r5 + 0x1;
+}
+if (CPU_FLAGS & E) {
+}
+} while (
+loc_61076:);
+r5 = sub_68a9c(&arg_17C);
+if (r5 == 0x0) {
+r5 = sub_68a9c("all_proxy");
+if (r5 == 0x0) {
+r5 = sub_68a9c("ALL_PROXY");
+}
+}
+}
+else {
+r5 = sub_68a9c("all_proxy");
+if (r5 == 0x0) {
+r5 = sub_68a9c("ALL_PROXY");
+}
+}
+}
+}
+free(r11);
+if (r5 == 0x0) goto loc_61104;
+goto loc_610ac;
+
+loc_60faa:
+r5 = sub_2f4b4(r0);
+if (r5 != 0x0) goto loc_60fba;
+goto loc_61a44;
+
+loc_60f32:
+r5 = r0;
+memset(&arg_17C, 0x0, 0x100);
+memset(&arg_7C, 0x0, 0x100);
+r1 = *(arg_50 + 0x3f0);
+if (r1 != 0x0) {
+strncpy(&arg_17C, r1, 0x100);
+arg_27B = 0x0;
+}
+r1 = *(arg_50 + 0x3f4);
+if (r1 != 0x0) {
+strncpy(&arg_7C, r1, 0x100);
+arg_17B = 0x0;
+}
+r0 = sub_688f0(&arg_17C);
+*(r10 + 0x124) = r0;
+if (r0 == 0x0) goto loc_61a44;
+r0 = sub_688f0(&arg_7C);
+*(r10 + 0x128) = r0;
+if (r0 == 0x0) goto loc_61a44;
+r0 = r5;
+goto loc_60f9e;
+
+loc_60f1a:
+r0 = sub_2f4b4(r0);
+*(r10 + 0x120) = r0;
+if (r0 == 0x0) goto loc_61a44;
+goto loc_60f28;
+
+loc_60ea6:
+r2 = *(r5 + 0x474);
+r4 = sub_5a7ac("%s://%s", "HTTP", r2, r3);
+if (r4 == 0x0) goto loc_61a44;
+if (*(r5 + 0x478) != 0x0) {
+r0 = *(r5 + 0x474);
+r0 = free(r0);
+asm{ vmovne.i32 d16, #0x0 } << 0x10 | 0x0;
+asm{ addwne     r0, r5, #0x474 };
+*r0 = d16;
+}
+*(r5 + 0x474) = r4;
+*(r5 + 0x478) = 0x1;
+r0 = *(r10 + 0x240);
+goto loc_60ef2;
+
+loc_60e80:
+r11 = 0x1;
+goto loc_606a4;
+
+loc_60cfc:
+r0 = r0 + 0x1;
+*r6 = r0;
+if (*(arg_50 + 0x30c) != 0x2) goto loc_60d16;
+goto loc_60d0a;
+
+loc_60d16:
+var_0 = &arg_70;
+r3 = &arg_74;
+r11 = sub_68738(r5, (r5 ^ 0xffffffff) + r0, &arg_7C, r3);
+if (r11 != 0x0) goto loc_60dae;
+r0 = arg_7C;
+if (r0 == 0x0) goto loc_60d52;
+goto loc_60d36;
+
+loc_60d52:
+r4 = arg_48;
+
+loc_60d54:
+r0 = arg_74;
+if (r0 == 0x0) goto loc_60d6c;
+goto loc_60d5a;
+
+loc_60d6c:
+r5 = arg_54;
+
+loc_60d6e:
+r0 = arg_70;
+if (r0 == 0x0) goto loc_60d98;
+goto loc_60d74;
+
+loc_60d98:
+r11 = 0x0;
+
+loc_60daa:
+arg_48 = r4;
+arg_54 = r5;
+goto loc_60dae;
+
+loc_60d74:
+r0 = sub_688f0(r0);
+arg_44 = r0;
+if (r0 == 0x0) goto loc_60da6;
+goto loc_60d7e;
+
+loc_60da6:
+r11 = 0x1b;
+goto loc_60daa;
+
+loc_60d7e:
+free(arg_40);
+r11 = 0x0;
+arg_48 = r4;
+arg_54 = r5;
+arg_40 = arg_44;
+goto loc_60dae;
+
+loc_60d5a:
+r5 = sub_688f0(r0);
+if (r5 == 0x0) goto loc_60d9e;
+goto loc_60d64;
+
+loc_60d9e:
+r11 = 0x1b;
+arg_48 = r4;
+goto loc_60dae;
+
+loc_60d64:
+free(arg_54);
+goto loc_60d6e;
+
+loc_60d36:
+*(r10 + 0x214) = 0x1;
+*(r10 + 0x1d8) = 0x1;
+r4 = sub_688f0(r0);
+if (r4 == 0x0) goto loc_60d92;
+goto loc_60d4a;
+
+loc_60d92:
+r11 = 0x1b;
+goto loc_60dae;
+
+loc_60d4a:
+free(arg_48);
+goto loc_60d54;
+
+loc_60d0a:
+r11 = 0x0;
+goto loc_60dae;
+
+loc_60c5c:
+arg_38 = r4;
+r0 = strlen(r4);
+r4 = *(r5 + 0x474);
+arg_44 = r0;
+r11 = strlen(r4);
+r5 = strlen(*r6);
+if (arg_34 == 0x0) {
+r5 = 0x3 + strlen(arg_30) + r5;
+}
+r11 = malloc(r11 + 0x2);
+if (r11 == 0x0) goto loc_60d10;
+goto loc_60c98;
+
+loc_60d10:
+r11 = 0x1b;
+goto loc_606a2;
+
+loc_60c98:
+memcpy(r11, r4, r5);
+memcpy(r11 + r5, arg_38, arg_44 + 0x1);
+r5 = arg_50;
+if (*(r5 + 0x478) != 0x0) {
+r0 = *(r5 + 0x474);
+r0 = free(r0);
+asm{ vmov.i32   d16, #0x0 } << 0x10 | 0x0;
+asm{ addw       r0, r5, #0x474 };
+*r0 = d16;
+}
+r4 = arg_38;
+r6 = arg_4C;
+*(r5 + 0x474) = r11;
+*(r5 + 0x478) = 0x1;
+goto loc_60cda;
+
+loc_60a8e:
+r0 = strlen(r4);
+r0 = malloc(r0 + 0x1);
+r11 = r0;
+if (r0 == 0x0) goto loc_60c24;
+goto loc_60aa2;
+
+loc_60c24:
+r11 = 0x1b;
+r8 = *___stack_chk_guard;
+goto loc_606a2;
+
+loc_60aa2:
+r8 = sub_2f4b4(r4);
+if (r8 == 0x0) goto loc_60c1e;
+goto loc_60ab2;
+
+loc_60c1e:
+free(r11);
+goto loc_60c24;
+
+loc_60ab2:
+arg_28 = r6;
+arg_50 = r5;
+r0 = strchr(r8, 0x3f);
+r6 = r8;
+r4 = r11;
+r5 = r8;
+r8 = r0;
+asm{ itttt      ne };
+if (r0 != 0x0) {
+r0 = 0x0;
+}
+if (CPU_FLAGS & E) {
+*(int8_t *)r8 = r0;
+}
+if (CPU_FLAGS & E) {
+r11 = r4;
+}
+if (CPU_FLAGS & E) {
+r5 = r6;
+}
+
+loc_60ad4:
+if (strncmp("./", r5, 0x2) == 0x0) goto loc_60b8c;
+goto loc_60aea;
+
+loc_60b8c:
+r5 = r5 + 0x2;
+
+loc_60bca:
+if (*(int8_t *)r5 != 0x0) goto loc_60ad4;
+r5 = arg_50;
+if (r8 != 0x0) {
+r0 = r8 - r6;
+r8 = r6;
+r6 = r4;
+r4 = arg_38 + r0;
+r0 = strlen(r4);
+r1 = r4;
+r4 = r6;
+r6 = r8;
+memcpy(r11, r1, r0 + 0x1);
+}
+free(r6);
+r0 = r4;
+r6 = r4;
+r4 = arg_38;
+if (strcmp(r0, r4) == 0x0) goto loc_60c3c;
+goto loc_60c0c;
+
+loc_60c3c:
+free(r6);
+r6 = arg_28;
+goto loc_60c44;
+
+loc_60c0c:
+r0 = *arg_44;
+free(r0);
+*arg_44 = r6;
+r4 = r6;
+*arg_2C = r6;
+
+loc_60a6e:
+r6 = arg_4C;
+r8 = *___stack_chk_guard;
+goto loc_60c5c;
+
+loc_60aea:
+if (strncmp("../", r5, 0x3) == 0x0) goto loc_60b90;
+goto loc_60b00;
+
+loc_60b90:
+r5 = r5 + 0x3;
+goto loc_60bca;
+
+loc_60b00:
+if (strncmp("/./", r5, 0x3) == 0x0) goto loc_60b8c;
+if (strcmp("/.", r5) == 0x0) goto loc_60b94;
+goto loc_60b2a;
+
+loc_60b94:
+r5 = r5 + 0x1;
+*(int8_t *)r5 = 0x2f;
+goto loc_60bca;
+
+loc_60b2a:
+if (strncmp("/../", r5, 0x4) == 0x0) goto loc_60b9c;
+goto loc_60b40;
+
+loc_60b9c:
+r5 = r5 + 0x3;
+do {
+if (r11 >= r4) {
+break;
+}
+r11 = r11 + 0xffffffffffffffff;
+} while (*(int8_t *)r11 != 0x2f);
+
+loc_60bc4:
+*(int8_t *)r11 = 0x0;
+goto loc_60bca;
+
+loc_60b40:
+if (strcmp("/..", r5) == 0x0) goto loc_60bb2;
+goto loc_60b54;
+
+loc_60bb2:
+r5 = r5 + 0x2;
+*(int8_t *)r5 = 0x2f;
+do {
+if (r11 >= r4) {
+break;
+}
+r11 = r11 + 0xffffffffffffffff;
+} while (*(int8_t *)r11 != 0x2f);
+goto loc_60bc4;
+
+loc_60b54:
+if ((strcmp(".", r5) != 0x0) && (strcmp("..", r5) != 0x0)) goto loc_60b78;
+goto loc_60bac;
+
+loc_60b78:
+r0 = *(int8_t *)r5;
+do {
+*(int8_t *)r11 = r0;
+r11 = r11 + 0x1;
+r5 = r5 + 0x1;
+r0 = *(int8_t *)r5;
+asm{  };
+if (r0 != 0x0) {
+}
+if (
+loc_60b88:) {
+break;
+}
+else {
+continue;
+}
+} while (true);
+goto loc_60bc4;
+
+loc_60bac:
+*(int8_t *)r5 = 0x0;
+goto loc_60bca;
+
+loc_60a58:
+r0 = strlen(r4);
+memmove(r4 + 0x1, r4, r0 + 0x1);
+*(int8_t *)r4 = 0x2f;
+goto loc_60a6e;
+
+loc_60a3c:
+arg_4C = r8;
+r6 = 0x0;
+r4 = r1;
+goto loc_60a54;
+
+loc_609f8:
+arg_4C = r8;
+r0 = strlen(r5);
+r4 = arg_38;
+r6 = r0;
+r0 = strlen(r4);
+memmove(0x1 + r6 + r4, r4, r0 + 0x1);
+memcpy(r4 + 0x1, r5, r6);
+*(int8_t *)r4 = 0x2f;
+*(int8_t *)r5 = 0x0;
+r5 = arg_50;
+goto loc_60a50;
+
+loc_60622:
+r4 = r5;
+*(int8_t *)r5 = 0x0;
+r5 = arg_4C;
+r11 = arg_50;
+arg_34 = 0x0;
+r3 = *r5;
+r0 = *(r11 + 0x474);
+var_0 = r4;
+if (sscanf(r0, "%15[^\n:]://%[^\n/?]%[^\n]") > 0x1) goto loc_606ae;
+goto loc_6064e;
+
+loc_606ae:
+arg_38 = r4;
+r8 = r5;
+arg_2C = r6;
+r2 = &arg_17C;
+goto loc_609d4;
+
+loc_6064e:
+r3 = r4;
+r0 = *(r11 + 0x474);
+arg_38 = r4;
+if (sscanf(r0, "%[^\n/?]%[^\n]") < 0x1) goto loc_6069e;
+r2 = *(r11 + 0x384);
+arg_2C = r6;
+r6 = r5;
+if (r2 == 0x0) {
+r5 = *r6;
+if (sub_64790("FTP.", r5, 0x4) != 0x0) {
+r2 = "ftp";
+}
+else {
+if (sub_64790("DICT.", r5, 0x5) != 0x0) {
+r2 = "DICT";
+}
+else {
+if (sub_64790("LDAP.", r5, 0x5) != 0x0) {
+r2 = "LDAP";
+}
+else {
+if (sub_64790("IMAP.", r5, 0x5) != 0x0) {
+r2 = "IMAP";
+}
+else {
+if (sub_64790("SMTP.", r5, 0x5) != 0x0) {
+r2 = "smtp";
+}
+else {
+r0 = sub_64790("POP3.", r5, 0x5);
+r1 = "http";
+r2 = "pop3";
+asm{  };
+if (r0 == 0x0) {
+r2 = r1;
+}
+}
+}
+}
+}
+}
+}
+r8 = r6;
+arg_34 = 0x1;
+goto loc_609d4;
+
+loc_6054c:
+r10 = arg_64;
+goto loc_606aa;
+
+loc_602ce:
+r0 = sub_2f4b4(r0);
+*(r10 + 0x450) = r0;
+if (r0 == 0x0) goto loc_6044e;
+goto loc_602dc;
+}
+

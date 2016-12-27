@@ -7,24 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		813F58D31D6D4C69000B3572 /* HHJsonToCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813F58D11D6D4C69000B3572 /* HHJsonToCodeController.m */; };
-		813F58D41D6D4C69000B3572 /* HHJsonToCodeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813F58D21D6D4C69000B3572 /* HHJsonToCodeController.xib */; };
+		815FE5731E10EF16002558B2 /* HHClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 815FE5721E10EF16002558B2 /* HHClassModel.m */; };
+		815FE5761E10F0DB002558B2 /* HHPropertyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 815FE5751E10F0DB002558B2 /* HHPropertyModel.m */; };
+		815FE57E1E1112E4002558B2 /* FileTemplatesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 815FE57C1E1112E4002558B2 /* FileTemplatesView.m */; };
+		815FE57F1E1112E4002558B2 /* FileTemplatesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 815FE57D1E1112E4002558B2 /* FileTemplatesView.xib */; };
+		815FE5811E111384002558B2 /* FileTemp.txt in Resources */ = {isa = PBXBuildFile; fileRef = 815FE5801E111384002558B2 /* FileTemp.txt */; };
 		818D93D81D6C3FE800AEFF63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 818D93D71D6C3FE800AEFF63 /* AppDelegate.m */; };
 		818D93DB1D6C3FE800AEFF63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 818D93DA1D6C3FE800AEFF63 /* main.m */; };
 		818D93DD1D6C3FE800AEFF63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818D93DC1D6C3FE800AEFF63 /* Assets.xcassets */; };
 		818D93E91D6C561D00AEFF63 /* HHJsonToCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */; };
-		81B98B4F1D6D4E17007FCAD6 /* HHJsonToCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813F58D11D6D4C69000B3572 /* HHJsonToCodeController.m */; };
-		81B98B501D6D4E20007FCAD6 /* HHJsonToCodeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813F58D21D6D4C69000B3572 /* HHJsonToCodeController.xib */; };
+		81A6DE091DF522180037EACB /* sub_600f8 in Resources */ = {isa = PBXBuildFile; fileRef = 81A6DE081DF522180037EACB /* sub_600f8 */; };
+		81A6DE111DF6587C0037EACB /* HHComboBoxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE101DF6587C0037EACB /* HHComboBoxCell.m */; };
+		81A6DE2D1DF6AF6F0037EACB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81A6DE131DF6AF6F0037EACB /* Info.plist */; };
+		81A6DE2E1DF6AF6F0037EACB /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE151DF6AF6F0037EACB /* MASCompositeConstraint.m */; };
+		81A6DE2F1DF6AF6F0037EACB /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE181DF6AF6F0037EACB /* MASConstraint.m */; };
+		81A6DE301DF6AF6F0037EACB /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE1A1DF6AF6F0037EACB /* MASConstraintMaker.m */; };
+		81A6DE311DF6AF6F0037EACB /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE1C1DF6AF6F0037EACB /* MASLayoutConstraint.m */; };
+		81A6DE321DF6AF6F0037EACB /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE201DF6AF6F0037EACB /* MASViewAttribute.m */; };
+		81A6DE331DF6AF6F0037EACB /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE221DF6AF6F0037EACB /* MASViewConstraint.m */; };
+		81A6DE341DF6AF6F0037EACB /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE241DF6AF6F0037EACB /* NSArray+MASAdditions.m */; };
+		81A6DE351DF6AF6F0037EACB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE271DF6AF6F0037EACB /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		81A6DE361DF6AF6F0037EACB /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE291DF6AF6F0037EACB /* View+MASAdditions.m */; };
+		81A6DE371DF6AF6F0037EACB /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6DE2C1DF6AF6F0037EACB /* ViewController+MASAdditions.m */; };
+		81A837651DEBC7D5002DBB28 /* HHInputJsonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A837631DEBC7D5002DBB28 /* HHInputJsonViewController.m */; };
+		81A837661DEBC7D5002DBB28 /* HHInputJsonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A837641DEBC7D5002DBB28 /* HHInputJsonViewController.xib */; };
+		81A8376A1DEBD004002DBB28 /* HHStructViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A837681DEBD004002DBB28 /* HHStructViewController.m */; };
+		81A8376B1DEBD004002DBB28 /* HHStructViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A837691DEBD004002DBB28 /* HHStructViewController.xib */; };
 		81B98B531D6D4E9D007FCAD6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B98B511D6D4E9D007FCAD6 /* MainMenu.xib */; };
-		81B98B541D6D96B9007FCAD6 /* HHJsonToCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */; };
-		81C827641D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 81C827631D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme */; };
-		81C827671D6D43F00049C2DE /* HHJsonToCodePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C827661D6D43F00049C2DE /* HHJsonToCodePlugin.m */; };
+		81C26DB31DED380D00E72015 /* HHPropertyHash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81C26DB21DED380D00E72015 /* HHPropertyHash.plist */; };
+		81C26DB61DED3AA700E72015 /* HHStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C26DB51DED3AA700E72015 /* HHStringTool.m */; };
+		81C26DBD1DEFDE7300E72015 /* HHTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C26DBC1DEFDE7300E72015 /* HHTreeNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		813F58D01D6D4C69000B3572 /* HHJsonToCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHJsonToCodeController.h; sourceTree = "<group>"; };
-		813F58D11D6D4C69000B3572 /* HHJsonToCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHJsonToCodeController.m; sourceTree = "<group>"; };
-		813F58D21D6D4C69000B3572 /* HHJsonToCodeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHJsonToCodeController.xib; sourceTree = "<group>"; };
+		815FE5711E10EF16002558B2 /* HHClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHClassModel.h; sourceTree = "<group>"; };
+		815FE5721E10EF16002558B2 /* HHClassModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHClassModel.m; sourceTree = "<group>"; };
+		815FE5741E10F0DB002558B2 /* HHPropertyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPropertyModel.h; sourceTree = "<group>"; };
+		815FE5751E10F0DB002558B2 /* HHPropertyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHPropertyModel.m; sourceTree = "<group>"; };
+		815FE57B1E1112E4002558B2 /* FileTemplatesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTemplatesView.h; sourceTree = "<group>"; };
+		815FE57C1E1112E4002558B2 /* FileTemplatesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTemplatesView.m; sourceTree = "<group>"; };
+		815FE57D1E1112E4002558B2 /* FileTemplatesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileTemplatesView.xib; sourceTree = "<group>"; };
+		815FE5801E111384002558B2 /* FileTemp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FileTemp.txt; sourceTree = "<group>"; };
 		818D93D31D6C3FE800AEFF63 /* HHJsonToCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHJsonToCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818D93D61D6C3FE800AEFF63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		818D93D71D6C3FE800AEFF63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,12 +56,47 @@
 		818D93E11D6C3FE800AEFF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		818D93E71D6C561D00AEFF63 /* HHJsonToCodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHJsonToCodeTool.h; path = ../HHJsonToCode/HHJsonToCodeTool.h; sourceTree = "<group>"; };
 		818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHJsonToCodeTool.m; path = ../HHJsonToCode/HHJsonToCodeTool.m; sourceTree = "<group>"; };
+		81A6DE081DF522180037EACB /* sub_600f8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sub_600f8; sourceTree = "<group>"; };
+		81A6DE0F1DF6587C0037EACB /* HHComboBoxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHComboBoxCell.h; path = ../HHComboBoxCell.h; sourceTree = "<group>"; };
+		81A6DE101DF6587C0037EACB /* HHComboBoxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHComboBoxCell.m; path = ../HHComboBoxCell.m; sourceTree = "<group>"; };
+		81A6DE131DF6AF6F0037EACB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81A6DE141DF6AF6F0037EACB /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		81A6DE151DF6AF6F0037EACB /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		81A6DE161DF6AF6F0037EACB /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		81A6DE171DF6AF6F0037EACB /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		81A6DE181DF6AF6F0037EACB /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		81A6DE191DF6AF6F0037EACB /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		81A6DE1A1DF6AF6F0037EACB /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		81A6DE1B1DF6AF6F0037EACB /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		81A6DE1C1DF6AF6F0037EACB /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		81A6DE1D1DF6AF6F0037EACB /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		81A6DE1E1DF6AF6F0037EACB /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		81A6DE1F1DF6AF6F0037EACB /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		81A6DE201DF6AF6F0037EACB /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		81A6DE211DF6AF6F0037EACB /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		81A6DE221DF6AF6F0037EACB /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		81A6DE231DF6AF6F0037EACB /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		81A6DE241DF6AF6F0037EACB /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		81A6DE251DF6AF6F0037EACB /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		81A6DE261DF6AF6F0037EACB /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		81A6DE271DF6AF6F0037EACB /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		81A6DE281DF6AF6F0037EACB /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		81A6DE291DF6AF6F0037EACB /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		81A6DE2A1DF6AF6F0037EACB /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		81A6DE2B1DF6AF6F0037EACB /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		81A6DE2C1DF6AF6F0037EACB /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		81A837621DEBC7D5002DBB28 /* HHInputJsonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHInputJsonViewController.h; sourceTree = "<group>"; };
+		81A837631DEBC7D5002DBB28 /* HHInputJsonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHInputJsonViewController.m; sourceTree = "<group>"; };
+		81A837641DEBC7D5002DBB28 /* HHInputJsonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHInputJsonViewController.xib; sourceTree = "<group>"; };
+		81A837671DEBD004002DBB28 /* HHStructViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStructViewController.h; sourceTree = "<group>"; };
+		81A837681DEBD004002DBB28 /* HHStructViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHStructViewController.m; sourceTree = "<group>"; };
+		81A837691DEBD004002DBB28 /* HHStructViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHStructViewController.xib; sourceTree = "<group>"; };
 		81B98B521D6D4E9D007FCAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		81C827601D6D43F00049C2DE /* HHJsonToCodePlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHJsonToCodePlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		81C827631D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = HHJsonToCodePlugin.xcscheme; path = HHJsonToCodePlugin.xcodeproj/xcshareddata/xcschemes/HHJsonToCodePlugin.xcscheme; sourceTree = SOURCE_ROOT; };
-		81C827651D6D43F00049C2DE /* HHJsonToCodePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHJsonToCodePlugin.h; sourceTree = "<group>"; };
-		81C827661D6D43F00049C2DE /* HHJsonToCodePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHJsonToCodePlugin.m; sourceTree = "<group>"; };
-		81C827681D6D43F00049C2DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81C26DB21DED380D00E72015 /* HHPropertyHash.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HHPropertyHash.plist; sourceTree = "<group>"; };
+		81C26DB41DED3AA700E72015 /* HHStringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHStringTool.h; sourceTree = "<group>"; };
+		81C26DB51DED3AA700E72015 /* HHStringTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHStringTool.m; sourceTree = "<group>"; };
+		81C26DBB1DEFDE7300E72015 /* HHTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHTreeNode.h; sourceTree = "<group>"; };
+		81C26DBC1DEFDE7300E72015 /* HHTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHTreeNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				818D93D31D6C3FE800AEFF63 /* HHJsonToCode.app */,
-				81C827601D6D43F00049C2DE /* HHJsonToCodePlugin.xcplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,12 +130,28 @@
 		818D93D51D6C3FE800AEFF63 /* HHJsonToCode */ = {
 			isa = PBXGroup;
 			children = (
+				81A6DE121DF6AF6F0037EACB /* Masonry */,
+				81A6DE0F1DF6587C0037EACB /* HHComboBoxCell.h */,
+				81A6DE101DF6587C0037EACB /* HHComboBoxCell.m */,
+				815FE5801E111384002558B2 /* FileTemp.txt */,
 				818D93D61D6C3FE800AEFF63 /* AppDelegate.h */,
 				818D93D71D6C3FE800AEFF63 /* AppDelegate.m */,
+				815FE57B1E1112E4002558B2 /* FileTemplatesView.h */,
+				815FE57C1E1112E4002558B2 /* FileTemplatesView.m */,
+				815FE57D1E1112E4002558B2 /* FileTemplatesView.xib */,
+				81C26DBB1DEFDE7300E72015 /* HHTreeNode.h */,
+				81C26DBC1DEFDE7300E72015 /* HHTreeNode.m */,
+				81A837671DEBD004002DBB28 /* HHStructViewController.h */,
+				81A837681DEBD004002DBB28 /* HHStructViewController.m */,
+				81A837691DEBD004002DBB28 /* HHStructViewController.xib */,
+				81A837621DEBC7D5002DBB28 /* HHInputJsonViewController.h */,
+				81A837631DEBC7D5002DBB28 /* HHInputJsonViewController.m */,
+				81A837641DEBC7D5002DBB28 /* HHInputJsonViewController.xib */,
 				81B98B511D6D4E9D007FCAD6 /* MainMenu.xib */,
 				818D93DC1D6C3FE800AEFF63 /* Assets.xcassets */,
 				818D93E11D6C3FE800AEFF63 /* Info.plist */,
 				818D93D91D6C3FE800AEFF63 /* Supporting Files */,
+				81A6DE081DF522180037EACB /* sub_600f8 */,
 			);
 			path = HHJsonToCode;
 			sourceTree = "<group>";
@@ -91,28 +164,53 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		81A6DE121DF6AF6F0037EACB /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				81A6DE131DF6AF6F0037EACB /* Info.plist */,
+				81A6DE141DF6AF6F0037EACB /* MASCompositeConstraint.h */,
+				81A6DE151DF6AF6F0037EACB /* MASCompositeConstraint.m */,
+				81A6DE161DF6AF6F0037EACB /* MASConstraint+Private.h */,
+				81A6DE171DF6AF6F0037EACB /* MASConstraint.h */,
+				81A6DE181DF6AF6F0037EACB /* MASConstraint.m */,
+				81A6DE191DF6AF6F0037EACB /* MASConstraintMaker.h */,
+				81A6DE1A1DF6AF6F0037EACB /* MASConstraintMaker.m */,
+				81A6DE1B1DF6AF6F0037EACB /* MASLayoutConstraint.h */,
+				81A6DE1C1DF6AF6F0037EACB /* MASLayoutConstraint.m */,
+				81A6DE1D1DF6AF6F0037EACB /* Masonry.h */,
+				81A6DE1E1DF6AF6F0037EACB /* MASUtilities.h */,
+				81A6DE1F1DF6AF6F0037EACB /* MASViewAttribute.h */,
+				81A6DE201DF6AF6F0037EACB /* MASViewAttribute.m */,
+				81A6DE211DF6AF6F0037EACB /* MASViewConstraint.h */,
+				81A6DE221DF6AF6F0037EACB /* MASViewConstraint.m */,
+				81A6DE231DF6AF6F0037EACB /* NSArray+MASAdditions.h */,
+				81A6DE241DF6AF6F0037EACB /* NSArray+MASAdditions.m */,
+				81A6DE251DF6AF6F0037EACB /* NSArray+MASShorthandAdditions.h */,
+				81A6DE261DF6AF6F0037EACB /* NSLayoutConstraint+MASDebugAdditions.h */,
+				81A6DE271DF6AF6F0037EACB /* NSLayoutConstraint+MASDebugAdditions.m */,
+				81A6DE281DF6AF6F0037EACB /* View+MASAdditions.h */,
+				81A6DE291DF6AF6F0037EACB /* View+MASAdditions.m */,
+				81A6DE2A1DF6AF6F0037EACB /* View+MASShorthandAdditions.h */,
+				81A6DE2B1DF6AF6F0037EACB /* ViewController+MASAdditions.h */,
+				81A6DE2C1DF6AF6F0037EACB /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
 		81C827611D6D43F00049C2DE /* HHJsonToCodePlugin */ = {
 			isa = PBXGroup;
 			children = (
+				815FE5741E10F0DB002558B2 /* HHPropertyModel.h */,
+				815FE5751E10F0DB002558B2 /* HHPropertyModel.m */,
+				815FE5711E10EF16002558B2 /* HHClassModel.h */,
+				815FE5721E10EF16002558B2 /* HHClassModel.m */,
+				81C26DB41DED3AA700E72015 /* HHStringTool.h */,
+				81C26DB51DED3AA700E72015 /* HHStringTool.m */,
 				818D93E71D6C561D00AEFF63 /* HHJsonToCodeTool.h */,
 				818D93E81D6C561D00AEFF63 /* HHJsonToCodeTool.m */,
-				81C827651D6D43F00049C2DE /* HHJsonToCodePlugin.h */,
-				81C827661D6D43F00049C2DE /* HHJsonToCodePlugin.m */,
-				813F58D01D6D4C69000B3572 /* HHJsonToCodeController.h */,
-				813F58D11D6D4C69000B3572 /* HHJsonToCodeController.m */,
-				813F58D21D6D4C69000B3572 /* HHJsonToCodeController.xib */,
-				81C827681D6D43F00049C2DE /* Info.plist */,
-				81C827621D6D43F00049C2DE /* Supporting Files */,
+				81C26DB21DED380D00E72015 /* HHPropertyHash.plist */,
 			);
 			path = HHJsonToCodePlugin;
-			sourceTree = "<group>";
-		};
-		81C827621D6D43F00049C2DE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				81C827631D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,22 +233,6 @@
 			productReference = 818D93D31D6C3FE800AEFF63 /* HHJsonToCode.app */;
 			productType = "com.apple.product-type.application";
 		};
-		81C8275F1D6D43F00049C2DE /* HHJsonToCodePlugin */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 81C827691D6D43F00049C2DE /* Build configuration list for PBXNativeTarget "HHJsonToCodePlugin" */;
-			buildPhases = (
-				81C8275D1D6D43F00049C2DE /* Sources */,
-				81C8275E1D6D43F00049C2DE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = HHJsonToCodePlugin;
-			productName = HHJsonToCodePlugin;
-			productReference = 81C827601D6D43F00049C2DE /* HHJsonToCodePlugin.xcplugin */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,9 +243,6 @@
 				ORGANIZATIONNAME = caohuihi;
 				TargetAttributes = {
 					818D93D21D6C3FE800AEFF63 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					81C8275F1D6D43F00049C2DE = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -182,7 +261,6 @@
 			projectRoot = "";
 			targets = (
 				818D93D21D6C3FE800AEFF63 /* HHJsonToCode */,
-				81C8275F1D6D43F00049C2DE /* HHJsonToCodePlugin */,
 			);
 		};
 /* End PBXProject section */
@@ -192,18 +270,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81A6DE2D1DF6AF6F0037EACB /* Info.plist in Resources */,
 				818D93DD1D6C3FE800AEFF63 /* Assets.xcassets in Resources */,
-				81B98B501D6D4E20007FCAD6 /* HHJsonToCodeController.xib in Resources */,
+				815FE57F1E1112E4002558B2 /* FileTemplatesView.xib in Resources */,
 				81B98B531D6D4E9D007FCAD6 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81C8275E1D6D43F00049C2DE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81C827641D6D43F00049C2DE /* HHJsonToCodePlugin.xcscheme in Resources */,
-				813F58D41D6D4C69000B3572 /* HHJsonToCodeController.xib in Resources */,
+				81A6DE091DF522180037EACB /* sub_600f8 in Resources */,
+				81A8376B1DEBD004002DBB28 /* HHStructViewController.xib in Resources */,
+				81A837661DEBC7D5002DBB28 /* HHInputJsonViewController.xib in Resources */,
+				815FE5811E111384002558B2 /* FileTemp.txt in Resources */,
+				81C26DB31DED380D00E72015 /* HHPropertyHash.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,20 +289,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81A6DE361DF6AF6F0037EACB /* View+MASAdditions.m in Sources */,
 				818D93DB1D6C3FE800AEFF63 /* main.m in Sources */,
+				81A8376A1DEBD004002DBB28 /* HHStructViewController.m in Sources */,
 				818D93D81D6C3FE800AEFF63 /* AppDelegate.m in Sources */,
 				818D93E91D6C561D00AEFF63 /* HHJsonToCodeTool.m in Sources */,
-				81B98B4F1D6D4E17007FCAD6 /* HHJsonToCodeController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81C8275D1D6D43F00049C2DE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81C827671D6D43F00049C2DE /* HHJsonToCodePlugin.m in Sources */,
-				813F58D31D6D4C69000B3572 /* HHJsonToCodeController.m in Sources */,
-				81B98B541D6D96B9007FCAD6 /* HHJsonToCodeTool.m in Sources */,
+				81A6DE371DF6AF6F0037EACB /* ViewController+MASAdditions.m in Sources */,
+				81A6DE321DF6AF6F0037EACB /* MASViewAttribute.m in Sources */,
+				81A6DE2E1DF6AF6F0037EACB /* MASCompositeConstraint.m in Sources */,
+				81A6DE111DF6587C0037EACB /* HHComboBoxCell.m in Sources */,
+				81A6DE301DF6AF6F0037EACB /* MASConstraintMaker.m in Sources */,
+				81A6DE2F1DF6AF6F0037EACB /* MASConstraint.m in Sources */,
+				815FE57E1E1112E4002558B2 /* FileTemplatesView.m in Sources */,
+				81A6DE351DF6AF6F0037EACB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				81A6DE311DF6AF6F0037EACB /* MASLayoutConstraint.m in Sources */,
+				81A6DE341DF6AF6F0037EACB /* NSArray+MASAdditions.m in Sources */,
+				81C26DB61DED3AA700E72015 /* HHStringTool.m in Sources */,
+				81A837651DEBC7D5002DBB28 /* HHInputJsonViewController.m in Sources */,
+				815FE5761E10F0DB002558B2 /* HHPropertyModel.m in Sources */,
+				81C26DBD1DEFDE7300E72015 /* HHTreeNode.m in Sources */,
+				81A6DE331DF6AF6F0037EACB /* MASViewConstraint.m in Sources */,
+				815FE5731E10EF16002558B2 /* HHClassModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -320,7 +402,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -350,34 +432,6 @@
 			};
 			name = Release;
 		};
-		81C8276A1D6D43F00049C2DE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = "$(HOME)";
-				INFOPLIST_FILE = HHJsonToCodePlugin/Info.plist;
-				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
-				PRODUCT_BUNDLE_IDENTIFIER = com.caohuihui.HHJsonToCodePlugin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xcplugin;
-			};
-			name = Debug;
-		};
-		81C8276B1D6D43F00049C2DE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = "$(HOME)";
-				INFOPLIST_FILE = HHJsonToCodePlugin/Info.plist;
-				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
-				PRODUCT_BUNDLE_IDENTIFIER = com.caohuihui.HHJsonToCodePlugin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xcplugin;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -395,15 +449,6 @@
 			buildConfigurations = (
 				818D93E51D6C3FE800AEFF63 /* Debug */,
 				818D93E61D6C3FE800AEFF63 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		81C827691D6D43F00049C2DE /* Build configuration list for PBXNativeTarget "HHJsonToCodePlugin" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				81C8276A1D6D43F00049C2DE /* Debug */,
-				81C8276B1D6D43F00049C2DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
