@@ -21,7 +21,7 @@
     // Do view setup here.
     self.textView.delegate = self;
     self.textView.automaticQuoteSubstitutionEnabled = NO;
-    
+    self.textView.richText = NO;
 //    [self textDidChange:nil];
 }
 

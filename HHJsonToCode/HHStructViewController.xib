@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HHStructViewController">
             <connections>
                 <outlet property="classTextField" destination="7Xb-v8-4HE" id="YLc-F8-vT4"/>
+                <outlet property="firstBtn" destination="fal-Hq-YQA" id="dcV-ZS-Xah"/>
                 <outlet property="outlineView" destination="J32-m0-AwX" id="gZb-qX-hzQ"/>
+                <outlet property="unlineBtn" destination="xkI-4b-ICc" id="TAt-a8-cIW"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="writeCodeBtn" destination="GpJ-BJ-Mhs" id="pE8-Ac-BYS"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -151,7 +154,7 @@
                         <action selector="createObjectCCode:" target="-2" id="gE7-4m-1JQ"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Xb-v8-4HE">
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Xb-v8-4HE">
                     <rect key="frame" x="5" y="472" width="728" height="23"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="23" id="IPf-38-mZ3"/>
@@ -162,6 +165,48 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fal-Hq-YQA">
+                    <rect key="frame" x="89" y="6" width="128" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="124" id="8jy-De-lGq"/>
+                        <constraint firstAttribute="height" constant="14" id="HUQ-K7-RSH"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" title="属性首字母小写" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1uX-ml-qu8">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickFirstBtn:" target="-2" id="5Ez-8B-FLu"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xkI-4b-ICc">
+                    <rect key="frame" x="215" y="6" width="152" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="6HU-00-45o"/>
+                        <constraint firstAttribute="width" constant="148" id="UtN-iu-GvV"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" title="属性名称去掉下划线" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="JaQ-jZ-aup">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickUnlineBtn:" target="-2" id="Puc-et-Z2U"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GpJ-BJ-Mhs">
+                    <rect key="frame" x="371" y="6" width="108" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="CXA-9E-xZ6"/>
+                        <constraint firstAttribute="width" constant="104" id="uhQ-8l-Ebr"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" title="写入转换代码" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="RSY-Po-sx7">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickWriteCodeBtn:" target="-2" id="WfW-8S-vUe"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="nvI-9Z-Pj0" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="5" id="9lM-qX-Dfs"/>
@@ -169,13 +214,19 @@
                 <constraint firstItem="7Xb-v8-4HE" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="5" id="Cu2-ri-lsV"/>
                 <constraint firstItem="nvI-9Z-Pj0" firstAttribute="top" secondItem="OKy-zH-OHi" secondAttribute="bottom" constant="5" id="De8-j4-tZQ"/>
                 <constraint firstAttribute="trailing" secondItem="OuX-Sh-j35" secondAttribute="trailing" constant="5" id="DeK-Kz-KgG"/>
+                <constraint firstItem="GpJ-BJ-Mhs" firstAttribute="centerY" secondItem="nvI-9Z-Pj0" secondAttribute="centerY" id="Etr-P4-hNU"/>
+                <constraint firstItem="fal-Hq-YQA" firstAttribute="leading" secondItem="nvI-9Z-Pj0" secondAttribute="trailing" constant="18" id="FgN-pd-ZPf"/>
                 <constraint firstItem="7Xb-v8-4HE" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="TGR-tI-maW"/>
+                <constraint firstItem="GpJ-BJ-Mhs" firstAttribute="leading" secondItem="xkI-4b-ICc" secondAttribute="trailing" constant="8" id="ZoG-ev-VZi"/>
                 <constraint firstAttribute="bottom" secondItem="OuX-Sh-j35" secondAttribute="bottom" constant="5" id="dIH-b9-vMX"/>
                 <constraint firstItem="OKy-zH-OHi" firstAttribute="top" secondItem="7Xb-v8-4HE" secondAttribute="bottom" constant="5" id="dyr-uo-6La"/>
+                <constraint firstItem="fal-Hq-YQA" firstAttribute="centerY" secondItem="nvI-9Z-Pj0" secondAttribute="centerY" id="kuV-FD-ih9"/>
+                <constraint firstItem="xkI-4b-ICc" firstAttribute="centerY" secondItem="nvI-9Z-Pj0" secondAttribute="centerY" id="oRc-o5-Qcm"/>
                 <constraint firstItem="OKy-zH-OHi" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="5" id="qAa-Ei-4BL"/>
                 <constraint firstItem="OuX-Sh-j35" firstAttribute="leading" secondItem="TYJ-Tn-xVv" secondAttribute="trailing" constant="20" id="qso-Xg-kWD"/>
                 <constraint firstAttribute="bottom" secondItem="nvI-9Z-Pj0" secondAttribute="bottom" constant="5" id="rhM-3s-ajs"/>
                 <constraint firstAttribute="bottom" secondItem="TYJ-Tn-xVv" secondAttribute="bottom" constant="5" id="tFn-tM-NJF"/>
+                <constraint firstItem="xkI-4b-ICc" firstAttribute="leading" secondItem="fal-Hq-YQA" secondAttribute="trailing" constant="2" id="wqd-ge-bxZ"/>
                 <constraint firstAttribute="trailing" secondItem="OKy-zH-OHi" secondAttribute="trailing" constant="5" id="xfD-Kc-Eqo"/>
             </constraints>
             <point key="canvasLocation" x="-270" y="163"/>

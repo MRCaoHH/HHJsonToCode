@@ -28,9 +28,18 @@ typedef NS_ENUM(NSInteger,HHColumnType) {
 }
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet NSTextField *classTextField;
+@property (weak) IBOutlet NSButton *firstBtn;
+@property (weak) IBOutlet NSButton *unlineBtn;
+@property (weak) IBOutlet NSButton *writeCodeBtn;
 @end
 
 @implementation HHStructViewController
+///属性首字母小写
+static NSString *kFirstKey = @"first";
+///下划线转换
+static NSString *kUnlineKey = @"unline";
+///写入转换代码
+static NSString *kWriteKey = @"write";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,8 +49,17 @@ typedef NS_ENUM(NSInteger,HHColumnType) {
     _rootNode = [[HHTreeNode alloc]initWithRepresentedObject:_object];
     [self resolveId:_object note:_rootNode];
     [_outlineView  reloadItem:_rootNode];
-    
+    [_outlineView reloadData];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange:) name:NSTextDidChangeNotification object:nil];
+    ///
+    BOOL first =  [[NSUserDefaults standardUserDefaults]boolForKey:kFirstKey];
+    self.firstBtn.state = first?NSControlStateValueOn:NSControlStateValueOff;
+    
+    BOOL unline =  [[NSUserDefaults standardUserDefaults]boolForKey:kUnlineKey];
+    self.unlineBtn.state = unline?NSControlStateValueOn:NSControlStateValueOff;
+    
+    BOOL write =  [[NSUserDefaults standardUserDefaults]boolForKey:kWriteKey];
+    self.writeCodeBtn.state = write?NSControlStateValueOn:NSControlStateValueOff;
 }
 
 - (void)dealloc{
@@ -223,7 +241,8 @@ typedef NS_ENUM(NSInteger,HHColumnType) {
     
     NSMutableArray *codeModelArr = @[].mutableCopy;
     for (HHClassModel *model in classArr) {
-        NSArray *arr =  [HHJsonToCodeTool getCode:model];
+        
+        NSArray *arr =  [HHJsonToCodeTool getCode:model firstCharLow:self.firstBtn.state == NSControlStateValueOn removeUnline:self.unlineBtn.state == NSControlStateValueOn writeCode:self.writeCodeBtn.state == NSControlStateValueOn];
         [codeModelArr addObjectsFromArray:arr];
     }
     
@@ -258,6 +277,14 @@ typedef NS_ENUM(NSInteger,HHColumnType) {
     treeNode.modification = [HHJsonToCodeTool modificationWithClassName:treeNode.typeName];
     treeNode.pointer = [HHJsonToCodeTool pointerWithClassName:treeNode.typeName];
     [_outlineView reloadData];
+}
+
+#pragma mark -  -
+- (IBAction)clickFirstBtn:(NSButton *)sender {
+}
+- (IBAction)clickUnlineBtn:(NSButton *)sender {
+}
+- (IBAction)clickWriteCodeBtn:(NSButton *)sender {
 }
 
 @end

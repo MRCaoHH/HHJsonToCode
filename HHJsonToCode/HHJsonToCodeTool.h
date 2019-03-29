@@ -38,5 +38,6 @@ typedef NS_ENUM(NSInteger,HHFileType) {
 + (NSArray *)getClassList;
 
 + (NSArray *)getCode:(HHClassModel *)model;
++ (NSArray *)getCode:(HHClassModel *)model firstCharLow:(BOOL)firstCharLow removeUnline:(BOOL)removeUnline writeCode:(BOOL)writeCode;
 + (NSArray *)getClassModelArr:(HHTreeNode*)node;
 @end

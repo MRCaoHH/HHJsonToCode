@@ -37,6 +37,7 @@
 		81C26DB31DED380D00E72015 /* HHPropertyHash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81C26DB21DED380D00E72015 /* HHPropertyHash.plist */; };
 		81C26DB61DED3AA700E72015 /* HHStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C26DB51DED3AA700E72015 /* HHStringTool.m */; };
 		81C26DBD1DEFDE7300E72015 /* HHTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C26DBC1DEFDE7300E72015 /* HHTreeNode.m */; };
+		BAD900DA201B2D6F00FAD7F6 /* NSString+HHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD900D9201B2D6F00FAD7F6 /* NSString+HHExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,8 @@
 		81C26DB51DED3AA700E72015 /* HHStringTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHStringTool.m; sourceTree = "<group>"; };
 		81C26DBB1DEFDE7300E72015 /* HHTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHTreeNode.h; sourceTree = "<group>"; };
 		81C26DBC1DEFDE7300E72015 /* HHTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHTreeNode.m; sourceTree = "<group>"; };
+		BAD900D8201B2D6F00FAD7F6 /* NSString+HHExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HHExtension.h"; sourceTree = "<group>"; };
+		BAD900D9201B2D6F00FAD7F6 /* NSString+HHExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HHExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				815FE57D1E1112E4002558B2 /* FileTemplatesView.xib */,
 				81C26DBB1DEFDE7300E72015 /* HHTreeNode.h */,
 				81C26DBC1DEFDE7300E72015 /* HHTreeNode.m */,
+				BAD900D8201B2D6F00FAD7F6 /* NSString+HHExtension.h */,
+				BAD900D9201B2D6F00FAD7F6 /* NSString+HHExtension.m */,
 				81A837671DEBD004002DBB28 /* HHStructViewController.h */,
 				81A837681DEBD004002DBB28 /* HHStructViewController.m */,
 				81A837691DEBD004002DBB28 /* HHStructViewController.xib */,
@@ -306,6 +311,7 @@
 				81A6DE341DF6AF6F0037EACB /* NSArray+MASAdditions.m in Sources */,
 				81C26DB61DED3AA700E72015 /* HHStringTool.m in Sources */,
 				81A837651DEBC7D5002DBB28 /* HHInputJsonViewController.m in Sources */,
+				BAD900DA201B2D6F00FAD7F6 /* NSString+HHExtension.m in Sources */,
 				815FE5761E10F0DB002558B2 /* HHPropertyModel.m in Sources */,
 				81C26DBD1DEFDE7300E72015 /* HHTreeNode.m in Sources */,
 				81A6DE331DF6AF6F0037EACB /* MASViewConstraint.m in Sources */,

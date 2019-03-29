@@ -10,13 +10,18 @@
 #import "HHClassModel.h"
 #import "HHTreeNode.h"
 #import "HHPropertyModel.h"
+#import "NSString+HHExtension.h"
 
 static NSString *kFileName = @"___FILENAME___";
 static NSString *kProjectName = @"___PROJECTNAME___";
 static NSString *kDevName = @"___FULLUSERNAME___";
 static NSString *kDate = @"___DATE___";
 static NSString *kCopyright = @"___COPYRIGHT___";
-
+static NSString *kImportXYExtension = @"#import <XYExtension/XYExtension.h>";
+static NSString *kWriteCodeStart = @"+ (id)xy_replacedKeyFromPropertyName121:(NSString *)propertyName{\n\tNSString *newProertyName = propertyName;";
+static NSString *kWriteCodeEnd = @"\n\treturn newProertyName;\n}";
+static NSString *kWriteCodeFirstCharLow = @"\n\tnewProertyName = [newProertyName xy_firstCharUpper];";
+static NSString *kWriteCodeRemoveUnline = @"\n\tnewProertyName = [newProertyName xy_underlineFromCamel];";
 @implementation HHCodeMode
 
 @end
@@ -67,11 +72,14 @@ static NSString *kCopyright = @"___COPYRIGHT___";
 }
 
 + (NSArray *)getCode:(HHClassModel *)model{
-    return @[[self getCodeH:model],[self getCodeM:model]];
+    return [self getCode:model firstCharLow:NO removeUnline:NO writeCode:NO];
 }
 
++ (NSArray *)getCode:(HHClassModel *)model firstCharLow:(BOOL)firstCharLow removeUnline:(BOOL)removeUnline writeCode:(BOOL)writeCode{
+    return @[[self getCodeH:model firstCharLow:firstCharLow removeUnline:removeUnline],[self getCodeM:model firstCharLow:firstCharLow removeUnline:removeUnline writeCode:writeCode]];
+}
 
-+ (HHCodeMode *)getCodeH:(HHClassModel *)model{
++ (HHCodeMode *)getCodeH:(HHClassModel *)model firstCharLow:(BOOL)firstCharLow removeUnline:(BOOL)removeUnline{
     NSMutableString *code = @"".mutableCopy;
     
     NSString *fileTemp = [self getFileTemp:[NSString stringWithFormat:@"%@.h",model.typeName]];
@@ -94,7 +102,16 @@ static NSString *kCopyright = @"___COPYRIGHT___";
     [code appendFormat:@"\n@interface %@ : NSObject\n",model.typeName];
     
     for (HHPropertyModel *proModel in model.proArr) {
-        [code appendFormat:@"\n/*%@*/\n@property (%@) %@ %@%@;\n",proModel.note,proModel.modification,proModel.typeName,proModel.pointer?@"*":@"",proModel.name];
+        NSString *proertyName = proModel.name;
+        if (firstCharLow) {
+            proertyName = [proertyName xy_firstCharLower];
+        }
+        
+        if (removeUnline) {
+            proertyName = [proertyName xy_camelFromUnderline];
+        }
+        
+        [code appendFormat:@"\n/**\n %@\n*/\n@property (%@) %@ %@%@;\n",proModel.note,proModel.modification,proModel.typeName,proModel.pointer?@"*":@"",proertyName];
     }
     
     [code appendFormat:@"\n@end"];
@@ -105,7 +122,7 @@ static NSString *kCopyright = @"___COPYRIGHT___";
     return codeModel;
 }
 
-+ (HHCodeMode *)getCodeM:(HHClassModel *)model{
++ (HHCodeMode *)getCodeM:(HHClassModel *)model firstCharLow:(BOOL)firstCharLow removeUnline:(BOOL)removeUnline  writeCode:(BOOL)writeCode{
     NSMutableString *code = @"".mutableCopy;
     
     NSString *fileTemp = [self getFileTemp:[NSString stringWithFormat:@"%@.m",model.typeName]];
@@ -121,12 +138,32 @@ static NSString *kCopyright = @"___COPYRIGHT___";
     
     [code appendFormat:@"\n#import \"%@.h\"\n",model.typeName];
     
+    if (writeCode) {
+        [code appendString:kImportXYExtension];
+    }
+    
     for (NSString *aclass in impotClass) {
         [code appendFormat:@"\n#import \"%@.h\" ",aclass];
     }
     
     
     [code appendFormat:@"\n@implementation %@\n",model.typeName];
+    
+    if (writeCode) {
+        [code appendString:kWriteCodeStart];
+    }
+    
+    if (writeCode && firstCharLow) {
+        [code appendString:kWriteCodeFirstCharLow];
+    }
+    
+    if (writeCode && removeUnline) {
+        [code appendString:kWriteCodeRemoveUnline];
+    }
+    
+    if (writeCode) {
+        [code appendString:kWriteCodeEnd];
+    }
     
     [code appendFormat:@"\n@end"];
     HHCodeMode *codeModel = [[HHCodeMode alloc]init];
